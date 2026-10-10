@@ -1,7 +1,6 @@
-/* ===== SETTINGS: edit these two lines ===== */
-const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec";            // paste your Google Apps Script web app URL here
-const CONTACT_EMAIL = "admin@freesummitpt.com";
-/* ========================================== */
+/* Settings live in assets/config.js (loaded before this file), so updates to main.js never wipe them. */
+const FORM_ENDPOINT = (window.FS_CONFIG && window.FS_CONFIG.formEndpoint) || "";
+const CONTACT_EMAIL = (window.FS_CONFIG && window.FS_CONFIG.contactEmail) || "admin@freesummitpt.com";
 
 document.getElementById('yr').textContent = new Date().getFullYear();
 const mailLink = document.getElementById('mailLink');
@@ -36,6 +35,7 @@ setLang(lang);
 /* --- Topographic hero (contour lines, like the logo) --- */
 (function(){
   const svg = document.getElementById('topo');
+  if(!svg) return;
   const W = 1600, H = 1000; svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   const peaks = [{x:1180,y:330,s:1},{x:300,y:880,s:.7},{x:1500,y:900,s:.5}];
   const ns = 'http://www.w3.org/2000/svg';
@@ -73,6 +73,8 @@ setLang(lang);
 /* --- Booking form --- */
 const form = document.getElementById('bookForm');
 // Activity pages pre-select their activity: <form data-activity="...">
+// Links with data-select="<activity>" pick that activity in the form (e.g. "Know more" before a page exists)
+document.querySelectorAll('[data-select]').forEach(a=>a.addEventListener('click',()=>{ const sel=document.getElementById('f-activity'); if(sel) sel.value=a.dataset.select; }));
 if(form.dataset.activity){ const sel = document.getElementById('f-activity'); if(sel) sel.value = form.dataset.activity; }
 const msg = document.getElementById('formMsg');
 const T = {

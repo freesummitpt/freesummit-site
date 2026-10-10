@@ -3,24 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free Summit · Via ferrata & rock climbing near Lisbon</title>
-<meta name="description" content="Guided via ferrata, rock climbing and hiking half days on the sea cliffs of Cascais, Arrábida and Sesimbra, from Lisbon. Guide, gear and insurance included.">
-<meta property="og:title" content="Free Summit · Life is your biggest adventure">
-<meta property="og:description" content="Guided via ferrata and rock climbing near Lisbon. Guide, gear and insurance included.">
+<title>Free Summit · go beyond.</title>
+<meta name="description" content="Guided rock climbing, via ferrata and hiking near Lisbon, in Cascais, Arrábida and Sesimbra. Guide, gear and insurance included. No experience needed.">
+<meta property="og:title" content="Free Summit · go beyond.">
+<meta property="og:description" content="Guided rock climbing, via ferrata and hiking near Lisbon. Guide, gear and insurance included.">
+<meta property="og:image" content="https://freesummitpt.com/assets/og-image.png">
+<meta name="theme-color" content="#ECEEBF">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800;125,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body data-page="home">
 
 <header class="nav">
   <div class="wrap">
-    <a class="wordmark" href="#top" aria-label="Free Summit, home">FREE<br>SUMMIT</a>
-    <nav class="nav-links" aria-label="Main">
-      <a href="#activities" data-pt="Actividades">Activities</a>
-      <a href="#pricing" data-pt="Preços">Prices</a>
-      <a href="#day" data-pt="O dia">The day</a>
+    <a class="mark" href="#top" aria-label="Free Summit, home">FREE<br>SUMMIT</a>
+    <nav class="links" aria-label="Main">
+      <a href="#climbing" data-pt="Escalada">Climbing</a>
+      <a href="#via-ferrata">Via ferrata</a>
+      <a href="#hiking" data-pt="Caminhadas">Hiking</a>
       <a href="#book" class="keep" data-pt="Reservar">Book</a>
       <button class="lang" id="langBtn" type="button" aria-label="Mudar para português">PT</button>
     </nav>
@@ -28,15 +32,14 @@
 </header>
 
 <main id="top">
-<section class="hero" aria-labelledby="h1">
+<section class="hero" aria-labelledby="slogan">
   <svg class="topo" id="topo" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
   <div class="wrap">
-    <div class="coords" aria-hidden="true">38.44° N, 9.10° W<br>Sesimbra · Arrábida · Cascais</div>
-    <h1 class="display" id="h1" data-pt="A vida é a tua maior aventura">Life is your biggest adventure</h1>
-    <p data-pt="Meios-dias guiados de escalada, via ferrata e caminhada em Cascais, Arrábida e Sesimbra, a menos de uma hora de Lisboa. Não precisas de experiência.">Guided half days of rock climbing, via ferrata and hiking in Cascais, Arrábida and Sesimbra, under an hour from Lisbon. No experience needed.</p>
+    <h1 class="slogan" id="slogan">go beyond.</h1>
+    <p class="lead" data-pt="Escalada, via ferrata e caminhadas guiadas nas serras e falésias à volta de Lisboa. Tu trazes a vontade; nós trazemos o guia, o material e o seguro.">Guided rock climbing, via ferrata and hiking on the cliffs and hills around Lisbon. You bring the will; we bring the guide, the gear and the insurance.</p>
     <div class="btns">
-      <a class="btn primary" href="#book" data-pt="Pedir reserva">Request a booking</a>
-      <a class="btn ghost" href="#activities" data-pt="Ver actividades">See activities</a>
+      <a class="btn solid" href="#climbing" data-pt="Ver actividades">See activities</a>
+      <a class="btn" href="#book" data-pt="Pedir reserva">Request a booking</a>
     </div>
   </div>
 </section>
@@ -44,229 +47,128 @@
 <div class="strip">
   <div class="wrap">
     <ul>
+      <li data-pt="Não precisas de experiência">No experience needed</li>
       <li data-pt="Guia em todas as actividades">Guide on every trip</li>
-      <li data-pt="Todo o material técnico">All technical gear</li>
-      <li data-pt="Seguro de actividade">Activity insurance</li>
+      <li data-pt="Material e seguro incluídos">Gear and insurance included</li>
       <li data-pt="Grupos pequenos">Small groups</li>
-      <li data-pt="Transfer desde Lisboa disponível">Transfer from Lisbon available</li>
+      <li data-pt="Transfer desde Lisboa">Transfer from Lisbon</li>
     </ul>
   </div>
 </div>
 
-<!-- ACTIVITIES -->
-<section id="activities" aria-labelledby="acts-h">
+<section class="groups" aria-labelledby="acts-h">
   <div class="wrap">
-    <h2 class="display" id="acts-h" data-pt="Actividades">Activities</h2>
-    <p class="lede" data-pt="Meios-dias de cerca de 4 horas, de manhã ou à tarde. Na escalada usamos sempre corda de cima (top-rope) e o guia monta todas as ancoragens.">Half days of about 4 hours, morning or afternoon. Climbing is always on top-rope, with the guide setting every anchor.</p>
-
-    <div class="acts">
-      <article class="act">
-        <div>
-          <p class="place">Cascais</p>
-          <h3><a href="guia/" data-pt="Escalada na Guia">Rock climbing at Guia</a></h3>
-          <p data-pt="A melhor primeira vez na rocha. Falésia de calcário junto ao farol da Guia, a 5 minutos do carro, com mais de 100 vias e o Atlântico à frente. Ideal para famílias e para quem está em Cascais ou Lisboa.">The easiest first time on real rock. A limestone sea cliff by the Guia lighthouse, five minutes from the car, with around 100 routes and the Atlantic in front of you. Great for families and anyone staying in Cascais or Lisbon.</p>
-          <span class="tag" data-pt="Recolha grátis na estação de Cascais">Free pick-up at Cascais station</span>
-        </div>
-        <dl>
-          <dt data-pt="Duração">Duration</dt><dd data-pt="~4 h · dia inteiro opcional">~4 h · full day optional</dd>
-          <dt data-pt="Nível">Level</dt><dd data-pt="Iniciação, sem experiência">Beginner, no experience</dd>
-          <dt data-pt="Idade mín.">Min. age</dt><dd data-pt="10 anos, com adulto">10, with an adult</dd>
-          <dt data-pt="Grupo">Group</dt><dd data-pt="2 a 6 pessoas">2 to 6 people</dd>
-          <dt data-pt="Aproximação">Approach</dt><dd data-pt="Menos de 5 min">Under 5 min</dd>
-        </dl>
-        <div class="price"><div class="from" data-pt="desde">from</div><div class="amt">€45</div><div class="pp" data-pt="por pessoa">per person</div></div>
-      </article>
-
-      <article class="act">
-        <div>
-          <p class="place">Sesimbra</p>
-          <h3><a href="via-ferrata/">Via Ferrata dos Pinheirinhos</a></h3>
-          <p data-pt="800 metros por cabos de aço, degraus e cordas fixas sobre o mar, dentro do Parque Natural da Arrábida. Muito aéreo, sempre preso ao cabo e com o guia ao lado. Para quem se sente bem nas alturas.">800 metres of steel cable, rungs and fixed ropes along the cliffs above the sea, inside the Arrábida Natural Park. Very exposed, always clipped in, with your guide beside you. For anyone comfortable with heights.</p>
-        </div>
-        <dl>
-          <dt data-pt="Duração">Duration</dt><dd>~4 h</dd>
-          <dt data-pt="Percurso">Route</dt><dd data-pt="800 m · 195 m de desnível · K3">800 m · 195 m height gain · K3</dd>
-          <dt data-pt="Nível">Level</dt><dd data-pt="Boa forma, sem vertigens">Good fitness, no fear of heights</dd>
-          <dt data-pt="Idade mín.">Min. age</dt><dd data-pt="12 anos, com adulto">12, with an adult</dd>
-          <dt data-pt="Grupo">Group</dt><dd data-pt="2 a 8 pessoas">2 to 8 people</dd>
-        </dl>
-        <div class="price"><div class="from" data-pt="desde">from</div><div class="amt">€65</div><div class="pp" data-pt="por pessoa">per person</div></div>
-      </article>
-
-      <article class="act">
-        <div>
-          <p class="place">Arrábida</p>
-          <h3 data-pt="Escalada na Fenda da Arrábida">Rock climbing at Fenda da Arrábida</h3>
-          <p data-pt="Uma das falésias mais conhecidas de Portugal: calcário laranja com buracos e tufas, por cima da água turquesa do Portinho. O sector antigo tem vias fáceis para quem começa; as paredes principais desafiam quem já escala.">One of Portugal's best-known crags: orange limestone full of pockets, above the turquoise water of Portinho. The old sector has easy routes for first-timers; the main walls challenge people who already climb.</p>
-          <span class="tag" data-pt="Melhor de Outubro a Maio">Best October to May</span>
-        </div>
-        <dl>
-          <dt data-pt="Duração">Duration</dt><dd data-pt="~4 h · dia inteiro opcional">~4 h · full day optional</dd>
-          <dt data-pt="Nível">Level</dt><dd data-pt="Iniciação a avançado">Beginner to advanced</dd>
-          <dt data-pt="Idade mín.">Min. age</dt><dd data-pt="12 anos, com adulto">12, with an adult</dd>
-          <dt data-pt="Grupo">Group</dt><dd data-pt="2 a 6 pessoas">2 to 6 people</dd>
-          <dt data-pt="Aproximação">Approach</dt><dd data-pt="5 min, trilho íngreme">5 min, steep path</dd>
-        </dl>
-        <div class="price"><div class="from" data-pt="desde">from</div><div class="amt">€55</div><div class="pp" data-pt="por pessoa">per person</div></div>
-      </article>
-
-      <article class="act">
-        <div>
-          <p class="place">Sesimbra</p>
-          <h3 data-pt="Escalada no Forte do Cavalo">Rock climbing at Forte do Cavalo</h3>
-          <p data-pt="Vias curtas e bem equipadas mesmo por cima do mar, junto ao farol do Cavalo, com vista sobre a baía de Sesimbra. Para quem já tem alguma base desportiva ou já escala.">Short, well-bolted routes right above the sea by the Cavalo lighthouse, looking over Sesimbra bay. Best for people with some sporting background or who already climb.</p>
-        </div>
-        <dl>
-          <dt data-pt="Duração">Duration</dt><dd data-pt="~4 h · dia inteiro opcional">~4 h · full day optional</dd>
-          <dt data-pt="Nível">Level</dt><dd data-pt="Iniciação com boa forma, ou intermédio">Fit beginners or intermediate</dd>
-          <dt data-pt="Idade mín.">Min. age</dt><dd data-pt="12 anos, com adulto">12, with an adult</dd>
-          <dt data-pt="Grupo">Group</dt><dd data-pt="2 a 6 pessoas">2 to 6 people</dd>
-          <dt data-pt="Vias">Routes</dt><dd data-pt="~14 m, sobretudo 6a+ a 6c">~14 m, mostly 6a+ to 6c</dd>
-        </dl>
-        <div class="price"><div class="from" data-pt="desde">from</div><div class="amt">€55</div><div class="pp" data-pt="por pessoa">per person</div></div>
-      </article>
-
-      <article class="act">
-        <div>
-          <p class="place">Arrábida</p>
-          <h3><a href="caminhada-arrabida/" data-pt="Caminhada na Serra da Arrábida">Arrábida hiking tour</a></h3>
-          <p data-pt="Uma caminhada guiada pela serra e pela costa da Arrábida: cumeadas de calcário, mato mediterrânico e miradouros sobre a água turquesa do Portinho e a península de Tróia. Sem material técnico, só boas sapatilhas.">A guided walk across the ridges and coast of the Arrábida Natural Park: limestone crests, Mediterranean scrub and viewpoints over the turquoise water of Portinho and the Tróia peninsula. No technical gear, just good shoes.</p>
-          <span class="tag" data-pt="Melhor de Outubro a Junho">Best October to June</span>
-        </div>
-        <dl>
-          <dt data-pt="Duração">Duration</dt><dd>~4 h</dd>
-          <dt data-pt="Distância">Distance</dt><dd data-pt="~8 km · desnível moderado">~8 km · moderate climb</dd>
-          <dt data-pt="Nível">Level</dt><dd data-pt="Moderado, boa forma geral">Moderate, general fitness</dd>
-          <dt data-pt="Idade mín.">Min. age</dt><dd data-pt="8 anos, com adulto">8, with an adult</dd>
-          <dt data-pt="Grupo">Group</dt><dd data-pt="2 a 10 pessoas">2 to 10 people</dd>
-        </dl>
-        <div class="price"><div class="from" data-pt="desde">from</div><div class="amt">€35</div><div class="pp" data-pt="por pessoa">per person</div></div>
-      </article>
+    <div class="intro">
+      <h2 class="xb" id="acts-h" data-pt="Escolhe a tua aventura">Pick your adventure</h2>
+      <p data-pt="Meios-dias de cerca de 4 horas, de manhã ou à tarde, a menos de uma hora de Lisboa.">Half days of about 4 hours, morning or afternoon, all under an hour from Lisbon.</p>
     </div>
 
-    <div class="combo">
-      <div>
-        <h3 data-pt="Dia inteiro em Sesimbra">Full day in Sesimbra</h3>
-        <p data-pt="Via ferrata dos Pinheirinhos de manhã, escalada no Forte do Cavalo à tarde. Poupas €10 face aos dois meios-dias separados.">Via ferrata at Pinheirinhos in the morning, climbing at Forte do Cavalo in the afternoon. Saves €10 against booking the two half days separately.</p>
+    <!-- ROCK CLIMBING -->
+    <article class="group" id="climbing" aria-labelledby="g-climb">
+      <div class="group-head">
+        <h3 class="xb" id="g-climb" data-pt="Escalada">Rock climbing</h3>
+        <p data-pt="Escalada em rocha com corda de cima (top-rope). O guia monta todas as ancoragens e ensina-te a segurar. Sapatilhas de escalada incluídas.">Outdoor climbing on top-rope. The guide sets every anchor and teaches you to belay. Climbing shoes included.</p>
+        <span class="count" data-pt="3 locais">3 locations</span>
       </div>
-      <div><span class="amt">€110</span><small data-pt="por pessoa">per person</small></div>
-    </div>
+      <ul class="spots">
+        <li class="spot">
+          <div>
+            <p class="where">Cascais</p>
+            <h4 data-pt="Guia">Guia</h4>
+            <p data-pt="Falésia junto ao farol, a 5 minutos do carro. A melhor primeira vez na rocha. A partir dos 10 anos.">Sea cliff by the lighthouse, five minutes from the car. The easiest first time on rock. From age 10.</p>
+          </div>
+          <div class="from"><small data-pt="desde">from</small><b>€45</b></div>
+          <a class="btn" href="guia/" data-pt="Saber mais">Know more</a>
+        </li>
+        <li class="spot">
+          <div>
+            <p class="where">Arrábida</p>
+            <h4>Fenda da Arrábida</h4>
+            <p data-pt="Calcário laranja sobre a água turquesa do Portinho. Vias fáceis para começar e paredes para quem já escala.">Orange limestone above the turquoise water of Portinho. Easy routes to start, steep walls if you already climb.</p>
+          </div>
+          <div class="from"><small data-pt="desde">from</small><b>€55</b></div>
+          <a class="btn" href="#book" data-select="Rock climbing at Fenda da Arrábida" data-pt="Saber mais">Know more</a>
+        </li>
+        <li class="spot">
+          <div>
+            <p class="where">Sesimbra</p>
+            <h4>Forte do Cavalo</h4>
+            <p data-pt="Vias curtas e bem equipadas mesmo por cima do mar, com vista sobre a baía de Sesimbra.">Short, well-bolted routes right above the sea, looking over Sesimbra bay.</p>
+          </div>
+          <div class="from"><small data-pt="desde">from</small><b>€55</b></div>
+          <a class="btn" href="#book" data-select="Rock climbing at Forte do Cavalo (Sesimbra)" data-pt="Saber mais">Know more</a>
+        </li>
+      </ul>
+    </article>
+
+    <!-- VIA FERRATA -->
+    <article class="group" id="via-ferrata" aria-labelledby="g-vf">
+      <div class="group-head">
+        <h3 class="xb" id="g-vf">Via ferrata</h3>
+        <p data-pt="Percursos com cabo de aço e degraus pelas falésias. Estás sempre preso ao cabo, com o guia ao lado. Só precisas de gostar de alturas.">Steel cables and rungs along the cliffs. You are clipped in the whole way, with your guide beside you. Just bring a head for heights.</p>
+        <span class="count" data-pt="1 local · 1 dia inteiro">1 location · 1 full day</span>
+      </div>
+      <ul class="spots">
+        <li class="spot">
+          <div>
+            <p class="where">Sesimbra</p>
+            <h4>Pinheirinhos</h4>
+            <p data-pt="800 m sobre o Atlântico, dentro do Parque Natural da Arrábida. Muito aéreo. A partir dos 12 anos.">800 m over the Atlantic, inside the Arrábida Natural Park. Very exposed. From age 12.</p>
+          </div>
+          <div class="from"><small data-pt="desde">from</small><b>€65</b></div>
+          <a class="btn" href="via-ferrata/" data-pt="Saber mais">Know more</a>
+        </li>
+        <li class="spot feature">
+          <div>
+            <p class="where" data-pt="Sesimbra · dia inteiro">Sesimbra · full day</p>
+            <h4 data-pt="Via ferrata + escalada">Via ferrata + climbing</h4>
+            <p data-pt="Pinheirinhos de manhã, Forte do Cavalo à tarde. Poupas €10 face aos dois meios-dias.">Pinheirinhos in the morning, Forte do Cavalo in the afternoon. €10 less than two half days.</p>
+          </div>
+          <div class="from"><small data-pt="por pessoa">per person</small><b>€110</b></div>
+          <a class="btn" href="#book" data-select="Full day in Sesimbra (combo)" data-pt="Saber mais">Know more</a>
+        </li>
+      </ul>
+    </article>
+
+    <!-- HIKING -->
+    <article class="group" id="hiking" aria-labelledby="g-hike">
+      <div class="group-head">
+        <h3 class="xb" id="g-hike" data-pt="Caminhadas">Hiking</h3>
+        <p data-pt="Caminhadas guiadas por serras e costa, com um guia que conhece a natureza e a história de cada sítio. Sem material técnico.">Guided walks over hills and coast, with a guide who knows the nature and history of each place. No technical gear.</p>
+        <span class="count" data-pt="1 local">1 location</span>
+      </div>
+      <ul class="spots">
+        <li class="spot">
+          <div>
+            <p class="where">Arrábida</p>
+            <h4>Serra da Arrábida</h4>
+            <p data-pt="~8 km por cumeadas de calcário e miradouros sobre o Portinho e Tróia. Nível moderado. A partir dos 8 anos.">~8 km over limestone ridges and viewpoints above Portinho and Tróia. Moderate level. From age 8.</p>
+          </div>
+          <div class="from"><small data-pt="desde">from</small><b>€35</b></div>
+          <a class="btn" href="caminhada-arrabida/" data-pt="Saber mais">Know more</a>
+        </li>
+      </ul>
+    </article>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="light" aria-labelledby="price-h">
+<section class="how" aria-labelledby="how-h">
   <div class="wrap">
-    <h2 class="display" id="price-h" data-pt="Preços">Prices</h2>
-    <p class="lede" data-pt="Preços por pessoa. Mínimo de 2 participantes por saída. Em grupos privados, as 2 primeiras pessoas pagam o preço normal e cada pessoa a mais paga €10 menos.">Per person. Minimum 2 participants per departure. On private bookings the first 2 people pay the standard price and each extra person pays €10 less.</p>
-
-    <table>
-      <caption class="hp" data-pt="Preços por actividade">Prices by activity</caption>
-      <thead>
-        <tr>
-          <th scope="col" data-pt="Actividade">Activity</th>
-          <th scope="col" data-pt="Grupo partilhado">Shared group</th>
-          <th scope="col" data-pt="Privado, cada pessoa a mais">Private, each extra person</th>
-          <th scope="col" data-pt="Crianças / jovens">Children / teens</th>
-          <th scope="col" data-pt="Dia inteiro">Full day</th>
-          <th scope="col" data-pt="Privado, 1 pessoa (total)">Solo private (total)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row"><span data-pt="Escalada na Guia">Climbing at Guia</span><small>Cascais</small></th>
-          <td data-label="Shared group" data-label-pt="Grupo partilhado">€45</td>
-          <td data-label="Private, each extra person" data-label-pt="Privado, cada pessoa a mais">€35</td>
-          <td data-label="Children 10–15" data-label-pt="Crianças 10–15">€35</td>
-          <td data-label="Full day" data-label-pt="Dia inteiro">€75</td>
-          <td data-label="Solo private (total)" data-label-pt="Privado, 1 pessoa (total)">€110</td>
-        </tr>
-        <tr>
-          <th scope="row">Via Ferrata dos Pinheirinhos<small>Sesimbra</small></th>
-          <td data-label="Shared group" data-label-pt="Grupo partilhado">€65</td>
-          <td data-label="Private, each extra person" data-label-pt="Privado, cada pessoa a mais">€55</td>
-          <td data-label="Teens 12–15" data-label-pt="Jovens 12–15">€55</td>
-          <td class="none" data-label="Full day" data-label-pt="Dia inteiro">—</td>
-          <td data-label="Solo private (total)" data-label-pt="Privado, 1 pessoa (total)">€130</td>
-        </tr>
-        <tr>
-          <th scope="row"><span data-pt="Escalada na Fenda da Arrábida">Climbing at Fenda da Arrábida</span><small>Arrábida</small></th>
-          <td data-label="Shared group" data-label-pt="Grupo partilhado">€55</td>
-          <td data-label="Private, each extra person" data-label-pt="Privado, cada pessoa a mais">€45</td>
-          <td data-label="Teens 12–15" data-label-pt="Jovens 12–15">€45</td>
-          <td data-label="Full day" data-label-pt="Dia inteiro">€90</td>
-          <td data-label="Solo private (total)" data-label-pt="Privado, 1 pessoa (total)">€140</td>
-        </tr>
-        <tr>
-          <th scope="row"><span data-pt="Escalada no Forte do Cavalo">Climbing at Forte do Cavalo</span><small>Sesimbra</small></th>
-          <td data-label="Shared group" data-label-pt="Grupo partilhado">€55</td>
-          <td data-label="Private, each extra person" data-label-pt="Privado, cada pessoa a mais">€45</td>
-          <td data-label="Teens 12–15" data-label-pt="Jovens 12–15">€45</td>
-          <td data-label="Full day" data-label-pt="Dia inteiro">€90</td>
-          <td data-label="Solo private (total)" data-label-pt="Privado, 1 pessoa (total)">€140</td>
-        </tr>
-        <tr>
-          <th scope="row"><span data-pt="Caminhada na Serra da Arrábida">Arrábida hiking tour</span><small>Arrábida</small></th>
-          <td data-label="Shared group" data-label-pt="Grupo partilhado">€35</td>
-          <td data-label="Private, each extra person" data-label-pt="Privado, cada pessoa a mais">€25</td>
-          <td data-label="Children 8–15" data-label-pt="Crianças 8–15">€20</td>
-          <td class="none" data-label="Full day" data-label-pt="Dia inteiro">—</td>
-          <td data-label="Solo private (total)" data-label-pt="Privado, 1 pessoa (total)">€70</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="notes">
-      <div>
-        <h3 data-pt="Transfers ida e volta">Round-trip transfers</h3>
-        <ul>
-          <li data-pt="Desde Lisboa (centro ou hotel): +€30 por pessoa para Sesimbra e Arrábida, +€20 para Cascais. Portagens incluídas, mínimo 2 pessoas.">From central Lisbon or your hotel: +€30 per person to Sesimbra and Arrábida, +€20 to Cascais. Tolls included, minimum 2 people.</li>
-          <li data-pt="Desde a margem sul (Almada, Seixal, Setúbal): +€20 Sesimbra, +€15 Arrábida (escalada e caminhada).">From the south bank (Almada, Seixal, Setúbal): +€20 Sesimbra, +€15 Arrábida (climbing and hiking).</li>
-          <li data-pt="Transfer privado porta-a-porta, até 4 pessoas: €100 (Cascais €80).">Private door-to-door transfer for up to 4 people: €100 (Cascais €80).</li>
-          <li data-pt="Cascais: recolha grátis na estação de comboio (linha de Cascais desde o Cais do Sodré).">Cascais: free pick-up at the train station (Cascais line from Cais do Sodré).</li>
-        </ul>
-      </div>
-    </div>
+    <h2 class="xb" id="how-h" data-pt="Como funciona">How it works</h2>
+    <ol class="steps">
+      <li><b data-pt="Escolhe">Pick</b><span data-pt="Escolhe a actividade e o local, e diz-nos a data e quantas pessoas são.">Choose an activity and a location, and tell us the date and how many of you.</span></li>
+      <li><b data-pt="Confirmamos">We confirm</b><span data-pt="Respondemos em 24 horas com a disponibilidade e o preço final.">We reply within 24 hours with availability and the final price.</span></li>
+      <li><b data-pt="Aparece">Show up</b><span data-pt="Encontramo-nos no local, ou vamos buscar-te a Lisboa. Nós levamos o material.">Meet us on site, or we pick you up in Lisbon. We bring all the gear.</span></li>
+      <li><b>Go beyond</b><span data-pt="Cerca de 4 horas na rocha ou no trilho. Enviamos-te as fotos depois.">About 4 hours on the rock or the trail. We send you the photos afterwards.</span></li>
+    </ol>
   </div>
 </section>
 
-<!-- THE DAY -->
-<section id="day" aria-labelledby="day-h">
-  <div class="wrap">
-    <h2 class="display" id="day-h" data-pt="Como corre o dia">How the day goes</h2>
-    <p class="lede" data-pt="Cerca de 4 horas do encontro ao fim. Tratamos da segurança e do material; tu só tens de aparecer com o essencial.">About 4 hours from meeting to finish. We handle the safety and the gear; you just bring the basics.</p>
-    <div class="split">
-      <div>
-        <h3 class="h3" data-pt="O plano">The plan</h3>
-        <ol class="timeline">
-          <li><b data-pt="Encontro">Meet</b><span data-pt="Boas-vindas, ajuste do material e briefing de segurança.">Welcome, gear fitting and safety briefing.</span></li>
-          <li><b data-pt="Aproximação">Approach</b><span data-pt="Caminhada curta até à falésia ou ao início da via ferrata.">Short walk to the crag or the start of the via ferrata.</span></li>
-          <li><b data-pt="Técnica">Skills</b><span data-pt="Nós, segurar e comandos de escalada. O guia verifica cada segurança.">Knots, belaying and climbing calls. The guide checks every belay.</span></li>
-          <li><b data-pt="Escalar">Climb</b><span data-pt="Vias de dificuldade crescente, à vez, com paragens para fotografias.">Routes of rising difficulty, taking turns, with photo stops.</span></li>
-          <li><b data-pt="Regresso">Finish</b><span data-pt="Regresso, devolução do material e conversa final. Enviamos as fotos depois.">Walk back, gear return and debrief. We send you the photos afterwards.</span></li>
-        </ol>
-      </div>
-      <div>
-        <h3 class="h3" data-pt="O que trazer">What to bring</h3>
-        <ul class="bring">
-          <li><b data-pt="Calçado:">Shoes:</b> <span data-pt="ténis ou sapatos de trilho com boa aderência. Nada de sandálias.">trainers or trail shoes with good grip. No sandals.</span></li>
-          <li><b data-pt="Roupa:">Clothes:</b> <span data-pt="desportiva e confortável; um casaco leve nos meses frios.">comfortable sports clothing; a light jacket in cooler months.</span></li>
-          <li><b data-pt="Água:">Water:</b> <span data-pt="1 a 1,5 L e um snack.">1 to 1.5 L and a snack.</span></li>
-          <li><b data-pt="Sol:">Sun:</b> <span data-pt="protector solar, óculos de sol e boné.">sunscreen, sunglasses and a cap.</span></li>
-          <li><b data-pt="Mochila:">Backpack:</b> <span data-pt="uma pequena chega.">a small one is enough.</span></li>
-          <li><b data-pt="Nós levamos:">We bring:</b> <span data-pt="arnês, capacete, sapatilhas de escalada, kit de via ferrata, cordas e primeiros socorros.">harness, helmet, climbing shoes, via ferrata lanyards, ropes and first aid.</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="book" class="contact" aria-labelledby="book-h">
-  <div class="wrap contact-grid">
+<section id="book" class="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
     <div>
-      <h2 class="display" id="book-h" data-pt="Reservar">Book a trip</h2>
-      <p class="lede" style="color:var(--sand)" data-pt="Diz-nos a actividade, a data e quantas pessoas são. Respondemos em 24 horas com a disponibilidade e o preço final.">Tell us the activity, the date and how many of you there are. We reply within 24 hours with availability and the final price.</p>
+      <h2 class="xb" id="book-h" data-pt="Reservar">Book a trip</h2>
+      <p class="lede" data-pt="Diz-nos a actividade, a data e quantas pessoas são. Respondemos em 24 horas.">Tell us the activity, the date and how many of you there are. We reply within 24 hours.</p>
       <div class="direct">
         <p><span data-pt="Email:">Email:</span> <a id="mailLink" href="mailto:admin@freesummitpt.com">admin@freesummitpt.com</a></p>
         <p>Instagram: <a href="https://instagram.com/freesummitpt" rel="noopener" target="_blank">@freesummitpt</a></p>
@@ -282,16 +184,16 @@
         <select id="f-activity" name="activity" required>
           <option value="" data-pt="Escolhe uma">Choose one</option>
           <option value="Rock climbing at Guia (Cascais)" data-pt="Escalada na Guia (Cascais)">Rock climbing at Guia (Cascais)</option>
-          <option value="Via Ferrata dos Pinheirinhos (Sesimbra)">Via Ferrata dos Pinheirinhos (Sesimbra)</option>
           <option value="Rock climbing at Fenda da Arrábida" data-pt="Escalada na Fenda da Arrábida">Rock climbing at Fenda da Arrábida</option>
           <option value="Rock climbing at Forte do Cavalo (Sesimbra)" data-pt="Escalada no Forte do Cavalo (Sesimbra)">Rock climbing at Forte do Cavalo (Sesimbra)</option>
-          <option value="Arrábida hiking tour" data-pt="Caminhada na Serra da Arrábida">Arrábida hiking tour</option>
+          <option value="Via Ferrata dos Pinheirinhos (Sesimbra)">Via Ferrata dos Pinheirinhos (Sesimbra)</option>
           <option value="Full day in Sesimbra (combo)" data-pt="Dia inteiro em Sesimbra (combo)">Full day in Sesimbra (combo)</option>
+          <option value="Arrábida hiking tour" data-pt="Caminhada na Serra da Arrábida">Arrábida hiking tour</option>
           <option value="Not sure yet" data-pt="Ainda não sei">Not sure yet</option>
         </select>
       </div>
       <div><label for="f-date" data-pt="Data preferida">Preferred date</label><input id="f-date" name="date" type="date"></div>
-      <div><label for="f-people" data-pt="Número de pessoas">Number of people</label><input id="f-people" name="people" type="number" min="1" max="8" value="2" inputmode="numeric"></div>
+      <div><label for="f-people" data-pt="Número de pessoas">Number of people</label><input id="f-people" name="people" type="number" min="1" max="10" value="2" inputmode="numeric"></div>
       <fieldset class="full">
         <legend data-pt="Tipo de reserva">Booking type</legend>
         <div class="seg">
@@ -311,7 +213,7 @@
       </div>
       <div class="full"><label for="f-msg"><span data-pt="Mensagem">Message</span> <span class="opt" data-pt="(opcional)">(optional)</span></label><textarea id="f-msg" name="message" data-pt-placeholder="Experiência, idades das crianças, horário preferido…" placeholder="Experience, children's ages, morning or afternoon…"></textarea></div>
       <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
-      <div class="full"><button class="btn primary" type="submit" id="sendBtn" data-pt="Enviar pedido">Send request</button></div>
+      <div class="full"><button class="btn" type="submit" id="sendBtn" data-pt="Enviar pedido">Send request</button></div>
       <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
       <p class="fine" data-pt="Usamos os teus dados apenas para responder a este pedido.">We only use your details to reply to this request.</p>
     </form>
@@ -321,11 +223,8 @@
 
 <footer>
   <div class="wrap">
-    <div>
-      <span class="wordmark">FREE SUMMIT</span>
-      <span data-pt="Escalada, via ferrata e caminhadas guiadas, Lisboa.">Guided climbing, via ferrata and hiking, Lisbon.</span>
-    </div>
-    <div>
+    <span class="badge"><img src="assets/fs-logo-cream.png" alt="Free Summit, go beyond." width="328" height="453"></span>
+    <div class="meta">
       <div><a href="https://instagram.com/freesummitpt" rel="noopener" target="_blank">@freesummitpt</a></div>
       <!-- TODO: add your RNAAT number once registered -->
       <div>RNAAT n.º <span id="rnaat">—</span></div>
@@ -334,6 +233,7 @@
   </div>
 </footer>
 
+<script src="assets/config.js"></script>
 <script src="assets/main.js"></script>
 </body>
 </html>
