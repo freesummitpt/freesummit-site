@@ -1,5 +1,5 @@
 /* ===== SETTINGS: edit these two lines ===== */
-const FORM_ENDPOINT = "";            // paste your Google Apps Script web app URL here
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec";            // paste your Google Apps Script web app URL here
 const CONTACT_EMAIL = "admin@freesummitpt.com";
 /* ========================================== */
 
