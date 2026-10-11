@@ -1,0 +1,162 @@
+# Activity page: Hike the Serra da Arrábida
+# Builds the page freesummitpt.com/caminhada-arrabida/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 3
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Arrábida hiking tour"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Hiking tour in Arrábida · Free Summit"
+description = "Guided half-day hike in the Serra da Arrábida Natural Park, near Lisbon. Ridges, sea views and Mediterranean scrub. Guide and insurance included. €35 per person."
+
+# Small line above the big heading
+place = "Arrábida"
+# Big price in the hero
+price = "€35"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Hiking in Arrábida", pt = "Caminhada na Arrábida" }
+
+# Big heading
+[heading]
+en = "Hike the Serra da Arrábida"
+pt = "Caminhada na Serra da Arrábida"
+
+# Text under the heading
+[intro]
+en = "A guided half-day walk where the mountains meet the sea, 45 minutes from Lisbon. Limestone ridges, wild herbs and views over the turquoise water of Portinho."
+pt = "Uma caminhada guiada de meio-dia onde a serra encontra o mar, a 45 minutos de Lisboa. Cumeadas de calcário, ervas aromáticas e vistas sobre a água turquesa do Portinho."
+
+# Small text next to the big price
+[price_note]
+en = "per person · guide and insurance included"
+pt = "por pessoa · guia e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "~4 hours", pt = "~4 horas" }
+
+[[facts]]
+label = { en = "Distance", pt = "Distância" }
+value = { en = "~8 km", pt = "~8 km" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Moderate", pt = "Moderado" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "8 years", pt = "8 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "2 to 10", pt = "2 a 10" }
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "A guided hike through the Arrábida Natural Park, one of the most beautiful stretches of coast in Portugal, where green limestone hills drop straight into a clear, turquoise sea."
+pt = "Uma caminhada guiada pelo Parque Natural da Arrábida, um dos troços de costa mais bonitos de Portugal, onde as serras verdes de calcário caem directamente sobre um mar azul-turquesa."
+
+[[about]]
+en = "We climb gently up to the ridge viewpoints, with the Tróia peninsula and the Sado estuary on one side and the open Atlantic on the other, then walk back through Mediterranean scrub full of rosemary, thyme and wild olive."
+pt = "Subimos com calma até aos miradouros da serra, com a península de Tróia e o estuário do Sado de um lado e o Atlântico do outro, e regressamos pelo mato mediterrânico, cheio de alecrim, tomilho e zambujeiros."
+
+[[about]]
+en = "Your guide tells you about the park's plants, geology and history along the way. No technical gear needed: just good shoes and a normal level of fitness."
+pt = "Pelo caminho, o guia fala-te das plantas, da geologia e da história do parque. Não precisas de material técnico: só de bom calçado e de uma forma física normal."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide who knows the park's nature and history"
+pt = "Guia que conhece a natureza e a história do parque"
+
+[[included]]
+en = "Route planning and timing for the weather"
+pt = "Escolha do percurso e do horário conforme o tempo"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+[[included]]
+en = "First aid kit"
+pt = "Kit de primeiros socorros"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€35"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€35"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€25"
+
+[[prices]]
+label = { en = "Children 8–15", pt = "Crianças 8–15" }
+price = "€20"
+
+[[prices]]
+label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
+price = "€70"
+
+[[prices]]
+label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
+price = "+€30"
+
+[[prices]]
+label = { en = "Transfer from Setúbal or the south bank", pt = "Transfer desde Setúbal ou margem sul" }
+price = "+€15"
+
+# Note under the price table
+[price_table_note]
+en = "Minimum 2 participants per departure. Best from October to June; in summer we start early to avoid the heat."
+pt = "Mínimo de 2 participantes por saída. Melhor de Outubro a Junho; no verão começamos cedo para fugir ao calor."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Meet", pt = "Encontro" }
+text = { en = "Welcome and a short briefing at the trailhead.", pt = "Boas-vindas e um briefing curto no início do trilho." }
+
+[[plan]]
+step = { en = "Up to the ridge", pt = "Subida à serra" }
+text = { en = "A steady climb to the first viewpoints over the coast.", pt = "Uma subida tranquila até aos primeiros miradouros sobre a costa." }
+
+[[plan]]
+step = { en = "Along the top", pt = "Pela cumeada" }
+text = { en = "The best views of the day, with a snack stop.", pt = "As melhores vistas do dia, com paragem para o lanche." }
+
+[[plan]]
+step = { en = "Down through the scrub", pt = "Descida pelo mato" }
+text = { en = "A different path back through the woods and scrub.", pt = "Um caminho diferente de volta, pelo bosque e pelo mato." }
+
+[[plan]]
+step = { en = "Finish", pt = "Fim" }
+text = { en = "Back at the start after about 4 hours.", pt = "De volta ao início ao fim de cerca de 4 horas." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trail or walking shoes with good grip.", pt = "sapatilhas de trilho ou de caminhada com boa aderência." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable layers; a light jacket in cooler months.", pt = "roupa confortável por camadas; um casaco leve nos meses frios." }
+
+[[bring]]
+item = { en = "Water:", pt = "Água:" }
+text = { en = "1.5 L and a snack.", pt = "1,5 L e um snack." }
+
+[[bring]]
+item = { en = "Sun:", pt = "Sol:" }
+text = { en = "sunscreen, sunglasses and a cap.", pt = "protector solar, óculos de sol e boné." }
+
+[[bring]]
+item = { en = "Backpack:", pt = "Mochila:" }
+text = { en = "a small one.", pt = "uma pequena." }

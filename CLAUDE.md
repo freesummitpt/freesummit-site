@@ -1,7 +1,7 @@
 # Free Summit website — project notes for Claude
 
 Free Summit is Lourenço's guided outdoor activities business near Lisbon (rock climbing, via ferrata, hiking).
-Slogan: **go beyond.** Instagram: @freesummitpt. Contact email: admin@freesummitpt.com.
+Slogan: **go beyond.** Instagram: @freesummitpt. Public contact email: hello@freesummitpt.com (form notifications and Google account: admin@freesummitpt.com).
 This repo IS the website. It is plain static HTML/CSS/JS hosted on **GitHub Pages** at **freesummitpt.com**
 (domain at Squarespace Domains, email on Google Workspace). No framework, no build step for the site itself.
 
@@ -15,11 +15,13 @@ assets/site.css            ONE stylesheet for every page (design tokens at the t
 assets/main.js             Shared JS: PT/EN toggle, contour hero, booking form
 assets/config.js           Site settings (form endpoint, contact email). Only file edited by hand.
 assets/*.png               Logo (olive / cream), favicon, apple-touch-icon, og-image (share image)
-tools/build_pages.py       Generates the activity pages from data. Run: python3 tools/build_pages.py
+tools/build_pages.py       Generates the activity pages. Run: python tools/build_pages.py (Python 3.11+, no packages)
+tools/activities/          _template.html (page HTML with {{placeholders}}), _shared.toml (form options), <slug>.toml per activity
 tools/booking-form-apps-script.gs   Google Apps Script that receives the form (copy, not deployed from here)
 CNAME                      freesummitpt.com — do not delete
 ```
-Activity pages are generated: edit `tools/build_pages.py` (PAGES data + template), re-run it, never hand-edit `guia/index.html` etc.
+Activity pages are generated: edit `tools/activities/<slug>.toml` (data) or `tools/activities/_template.html` (layout), re-run the script,
+never hand-edit `guia/index.html` etc. New activity = copy a .toml file; its file name becomes the URL folder.
 The homepage `index.html` is hand-written.
 
 ## Design system (approved by Lourenço — keep it)

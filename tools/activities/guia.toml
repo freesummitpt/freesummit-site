@@ -1,0 +1,170 @@
+# Activity page: Rock climbing in Cascais
+# Builds the page freesummitpt.com/guia/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 1
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Rock climbing at Guia (Cascais)"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Rock climbing in Cascais · Free Summit"
+description = "Guided outdoor rock climbing at Guia, Cascais. No experience needed. Guide, climbing shoes, all gear and insurance included. From €45 per person."
+
+# Small line above the big heading
+place = "Cascais"
+# Big price in the hero
+price = "€45"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Rock climbing in Cascais", pt = "Escalada em Cascais" }
+
+# Big heading
+[heading]
+en = "Rock climbing in Cascais"
+pt = "Escalada em Cascais"
+
+# Text under the heading
+[intro]
+en = "Your first time on real rock, on a sea cliff by the Guia lighthouse. No experience needed: we bring the gear, set the ropes and teach you everything."
+pt = "A tua primeira vez na rocha, numa falésia junto ao farol da Guia. Não precisas de experiência: levamos o material, montamos as cordas e ensinamos-te tudo."
+
+# Small text next to the big price
+[price_note]
+en = "per person · guide, gear and insurance included"
+pt = "por pessoa · guia, material e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "~4 hours", pt = "~4 horas" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Beginner", pt = "Iniciação" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "10 years", pt = "10 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "2 to 6", pt = "2 a 6" }
+
+[[facts]]
+label = { en = "Approach", pt = "Aproximação" }
+value = { en = "Under 5 min", pt = "Menos de 5 min" }
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "A half-day introduction to outdoor climbing on the limestone cliffs next to the Guia lighthouse, with the Atlantic right in front of you."
+pt = "Um meio-dia de iniciação à escalada nas falésias de calcário junto ao farol da Guia, com o Atlântico mesmo à tua frente."
+
+[[about]]
+en = "The crag is a few minutes from the road and has around 100 well-bolted routes. You climb on top-rope, with the guide setting every anchor and checking every belay. Beginners start on the easier slabs; if you already climb, you can move on to harder lines."
+pt = "A falésia fica a poucos minutos da estrada e tem cerca de 100 vias bem equipadas. Escalas em top-rope, com o guia a montar todas as ancoragens e a verificar cada segurança. Quem começa faz as placas mais fáceis; quem já escala pode passar a vias mais difíceis."
+
+[[about]]
+en = "It works well for families, couples and travellers staying in Cascais or Lisbon. Come by train on the Cascais line and we pick you up at the station for free."
+pt = "É ideal para famílias, casais e para quem está em Cascais ou Lisboa. Vem de comboio pela linha de Cascais e vamos buscar-te à estação sem custos."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide with you the whole time"
+pt = "Guia sempre contigo"
+
+[[included]]
+en = "Harness, helmet and climbing shoes in all sizes"
+pt = "Arnês, capacete e sapatilhas de escalada em todos os tamanhos"
+
+[[included]]
+en = "Ropes, belay devices and chalk"
+pt = "Cordas, aparelhos de segurança e magnésio"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+[[included]]
+en = "Photos of your climbs"
+pt = "Fotografias da actividade"
+
+[[included]]
+en = "Free pick-up at Cascais train station"
+pt = "Recolha grátis na estação de Cascais"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€45"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€45"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€35"
+
+[[prices]]
+label = { en = "Children 10–15", pt = "Crianças 10–15" }
+price = "€35"
+
+[[prices]]
+label = { en = "Full day, ~6 h (shared)", pt = "Dia inteiro, ~6 h (partilhado)" }
+price = "€75"
+
+[[prices]]
+label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
+price = "€110"
+
+[[prices]]
+label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
+price = "+€20"
+
+[[prices]]
+label = { en = "Pick-up at Cascais station", pt = "Recolha na estação de Cascais" }
+price = { en = "Free", pt = "Grátis" }
+
+# Note under the price table
+[price_table_note]
+en = "Minimum 2 participants per departure. In summer we climb in the morning or late afternoon, as the cliff gets sun all day."
+pt = "Mínimo de 2 participantes por saída. No verão escalamos de manhã ou ao fim da tarde, porque a falésia apanha sol todo o dia."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Meet", pt = "Encontro" }
+text = { en = "Welcome, gear fitting and safety briefing by the lighthouse.", pt = "Boas-vindas, ajuste do material e briefing junto ao farol." }
+
+[[plan]]
+step = { en = "Down to the crag", pt = "Descida à falésia" }
+text = { en = "A short walk and a flight of stairs to the rock.", pt = "Uma pequena caminhada e umas escadas até à rocha." }
+
+[[plan]]
+step = { en = "Skills", pt = "Técnica" }
+text = { en = "Knots, belaying and climbing calls. The guide checks every belay.", pt = "Nós, segurar e comandos de escalada. O guia verifica cada segurança." }
+
+[[plan]]
+step = { en = "Climb", pt = "Escalar" }
+text = { en = "Routes of rising difficulty, taking turns climbing and belaying.", pt = "Vias de dificuldade crescente, à vez a escalar e a segurar." }
+
+[[plan]]
+step = { en = "Finish", pt = "Fim" }
+text = { en = "Pack up and debrief. We send you the photos afterwards.", pt = "Arrumar e conversa final. Enviamos as fotos depois." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trainers for the walk in (climbing shoes are provided).", pt = "ténis para a caminhada (as sapatilhas de escalada são nossas)." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable sports clothing that lets you move freely.", pt = "desportiva e confortável, que te deixe mexer à vontade." }
+
+[[bring]]
+item = { en = "Water:", pt = "Água:" }
+text = { en = "1 to 1.5 L and a snack.", pt = "1 a 1,5 L e um snack." }
+
+[[bring]]
+item = { en = "Sun:", pt = "Sol:" }
+text = { en = "sunscreen, sunglasses and a cap.", pt = "protector solar, óculos de sol e boné." }

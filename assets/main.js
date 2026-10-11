@@ -1,6 +1,6 @@
 /* Settings live in assets/config.js (loaded before this file), so updates to main.js never wipe them. */
 const FORM_ENDPOINT = (window.FS_CONFIG && window.FS_CONFIG.formEndpoint) || "";
-const CONTACT_EMAIL = (window.FS_CONFIG && window.FS_CONFIG.contactEmail) || "admin@freesummitpt.com";
+const CONTACT_EMAIL = (window.FS_CONFIG && window.FS_CONFIG.contactEmail) || "hello@freesummitpt.com";
 
 document.getElementById('yr').textContent = new Date().getFullYear();
 const mailLink = document.getElementById('mailLink');

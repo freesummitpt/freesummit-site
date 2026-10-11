@@ -1,0 +1,204 @@
+{{!-- ================================================================
+  Template for every activity page. Edit freely: it is normal HTML.
+  After editing, run:  python tools/build_pages.py
+
+  {{name}}            -> replaced by a value from the activity's .toml file
+  {{heading.en}}      -> English text of [heading];  {{heading.pt}} -> Portuguese
+  {{#facts}} ... {{/facts}}
+                      -> repeats the part in between once per [[facts]] block
+  {{#pt}} ... {{/pt}} -> only shown if "pt" exists / is not empty
+  {{slug}}            -> the page's folder name (from the file name, e.g. guia)
+  {{#other_pages}}    -> every other activity page (for "More activities")
+  {{#form_options}}   -> the activities listed in _shared.toml
+  Notes written like this one (starting with an opening brace pair,
+  "!" and two dashes) are not copied to the pages.
+================================================================ --}}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="https://freesummitpt.com/assets/og-image.png">
+<meta name="theme-color" content="#ECEEBF">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body data-page="{{slug}}">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="../" aria-label="Free Summit, all activities">FREE<br>SUMMIT</a>
+    <nav class="links" aria-label="Main">
+      <a href="#details" data-pt="Detalhes">Details</a>
+      <a href="#pricing" data-pt="Preços">Prices</a>
+      <a href="../" data-pt="Todas as actividades">All activities</a>
+      <a href="#book" class="keep" data-pt="Reservar">Book</a>
+      <button class="lang" id="langBtn" type="button" aria-label="Mudar para português">PT</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero act-hero" aria-labelledby="h1">
+  <svg class="topo" id="topo" aria-hidden="true" preserveAspectRatio="xMidYMid slice"></svg>
+  <div class="wrap">
+    <p class="place-line">{{place}}</p>
+    <h1 class="xb" id="h1" data-pt="{{heading.pt}}">{{heading.en}}</h1>
+    <p class="lead" data-pt="{{intro.pt}}">{{intro.en}}</p>
+    <div class="hero-price"><b>{{price}}</b><span data-pt="{{price_note.pt}}">{{price_note.en}}</span></div>
+    <div class="btns">
+      <a class="btn solid" href="#book" data-pt="Reservar">Book now</a>
+      <a class="btn" href="#details" data-pt="Ver detalhes">See details</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap"><dl class="facts">{{#facts}}<div><dt data-pt="{{label.pt}}">{{label.en}}</dt><dd data-pt="{{value.pt}}">{{value.en}}</dd></div>{{/facts}}</dl></div>
+</div>
+
+<section id="details" class="section" aria-labelledby="about-h">
+  <div class="wrap two">
+    <div>
+      <h2 class="xb" id="about-h" data-pt="A actividade">The activity</h2>
+      <div class="prose">
+{{#about}}
+<p data-pt="{{pt}}">{{en}}</p>
+{{/about}}
+      </div>
+    </div>
+    <div>
+      <h3 class="h3" data-pt="Incluído">Included</h3>
+      <ul class="ticks">
+{{#included}}
+<li data-pt="{{pt}}">{{en}}</li>
+{{/included}}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section" aria-labelledby="price-h">
+  <div class="wrap">
+    <h2 class="xb" id="price-h" data-pt="Preços">Prices</h2>
+    <table class="ptable">
+      <caption class="hp" data-pt="Preços">Prices</caption>
+      <tbody>
+{{#prices}}
+<tr><th scope="row" data-pt="{{label.pt}}">{{label.en}}</th><td data-pt="{{price.pt}}">{{price.en}}</td></tr>
+{{/prices}}
+      </tbody>
+    </table>
+    <p class="note" data-pt="{{price_table_note.pt}}">{{price_table_note.en}}</p>
+  </div>
+</section>
+
+<section id="day" class="section" aria-labelledby="day-h">
+  <div class="wrap split">
+    <div>
+      <h2 class="h3" id="day-h" data-pt="O plano">The plan</h2>
+      <ol class="timeline">
+{{#plan}}
+<li><b data-pt="{{step.pt}}">{{step.en}}</b><span data-pt="{{text.pt}}">{{text.en}}</span></li>
+{{/plan}}
+      </ol>
+    </div>
+    <div>
+      <h2 class="h3" data-pt="O que trazer">What to bring</h2>
+      <ul class="bring">
+{{#bring}}
+<li><b data-pt="{{item.pt}}">{{item.en}}</b> <span data-pt="{{text.pt}}">{{text.en}}</span></li>
+{{/bring}}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="book" aria-labelledby="book-h">
+  <div class="wrap book-grid">
+    <div>
+      <h2 class="xb" id="book-h" data-pt="Reservar">Book a trip</h2>
+      <p class="lede" data-pt="Diz-nos a data e quantas pessoas são. Respondemos em 24 horas com a disponibilidade e o preço final.">Tell us the date and how many of you there are. We reply within 24 hours with availability and the final price.</p>
+      <div class="direct">
+        <p><span data-pt="Email:">Email:</span> <a id="mailLink" href="mailto:hello@freesummitpt.com">hello@freesummitpt.com</a></p>
+        <p>Instagram: <a href="https://instagram.com/freesummitpt" rel="noopener" target="_blank">@freesummitpt</a></p>
+      </div>
+    </div>
+
+    <form id="bookForm" data-activity="{{form_value}}" novalidate>
+      <div><label for="f-name" data-pt="Nome">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="f-phone"><span data-pt="Telefone / WhatsApp">Phone / WhatsApp</span> <span class="opt" data-pt="(opcional)">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div>
+        <label for="f-activity" data-pt="Actividade">Activity</label>
+        <select id="f-activity" name="activity" required>
+{{#form_options}}
+<option value="{{value}}"{{#pt}} data-pt="{{pt}}"{{/pt}}>{{value}}</option>
+{{/form_options}}
+        </select>
+      </div>
+      <div><label for="f-date" data-pt="Data preferida">Preferred date</label><input id="f-date" name="date" type="date"></div>
+      <div><label for="f-people" data-pt="Número de pessoas">Number of people</label><input id="f-people" name="people" type="number" min="1" max="10" value="2" inputmode="numeric"></div>
+      <fieldset class="full">
+        <legend data-pt="Tipo de reserva">Booking type</legend>
+        <div class="seg">
+          <label><input type="radio" name="type" value="Shared group" checked> <span data-pt="Grupo partilhado">Shared group</span></label>
+          <label><input type="radio" name="type" value="Private"> <span data-pt="Privado">Private</span></label>
+        </div>
+      </fieldset>
+      <div class="full">
+        <label for="f-transfer" data-pt="Transfer">Transfer</label>
+        <select id="f-transfer" name="transfer">
+          <option value="No transfer" data-pt="Não, vou ter ao ponto de encontro">No, I'll meet you there</option>
+          <option value="From Lisbon" data-pt="Sim, desde Lisboa">Yes, from Lisbon</option>
+          <option value="From the south bank" data-pt="Sim, desde a margem sul">Yes, from the south bank</option>
+          <option value="Cascais station pick-up" data-pt="Recolha na estação de Cascais">Pick-up at Cascais station</option>
+          <option value="Private transfer" data-pt="Transfer privado">Private transfer</option>
+        </select>
+      </div>
+      <div class="full"><label for="f-msg"><span data-pt="Mensagem">Message</span> <span class="opt" data-pt="(opcional)">(optional)</span></label><textarea id="f-msg" name="message" data-pt-placeholder="Experiência, idades das crianças, horário preferido…" placeholder="Experience, children's ages, morning or afternoon…"></textarea></div>
+      <div class="hp" aria-hidden="true"><label for="f-web">Website</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="full"><button class="btn" type="submit" id="sendBtn" data-pt="Enviar pedido">Send request</button></div>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      <p class="fine" data-pt="Usamos os teus dados apenas para responder a este pedido.">We only use your details to reply to this request.</p>
+    </form>
+  </div>
+</section>
+
+<section class="more" aria-labelledby="more-h">
+  <div class="wrap">
+    <h2 class="h3" id="more-h" data-pt="Mais actividades">More activities</h2>
+    <div class="others">
+{{#other_pages}}
+<a class="btn" href="../{{slug}}/" data-pt="{{link.pt}}">{{link.en}}</a>
+{{/other_pages}}
+<a class="btn solid" href="../#climbing" data-pt="Ver todas">See all</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="badge"><img src="../assets/fs-logo-cream.png" alt="Free Summit, go beyond." width="328" height="453"></span>
+    <div class="meta">
+      <div><a href="https://instagram.com/freesummitpt" rel="noopener" target="_blank">@freesummitpt</a></div>
+      <!-- TODO: add your RNAAT number once registered -->
+      <div>RNAAT n.º <span id="rnaat">—</span></div>
+      <div>© <span id="yr">2026</span> Free Summit</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/config.js"></script>
+<script src="../assets/main.js"></script>
+</body>
+</html>
