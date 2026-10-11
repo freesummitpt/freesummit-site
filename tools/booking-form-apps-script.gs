@@ -14,7 +14,7 @@
  *       Execute as: Me    ·    Who has access: Anyone
  *     Authorise when asked (Google will warn that the app is unverified: Advanced → Go to project).
  *  4. Copy the Web app URL (ends in /exec).
- *  5. In index.html, paste it into:  const FORM_ENDPOINT = "…/exec";
+ *  5. In assets/main.js (line 2), paste it into:  const FORM_ENDPOINT = "…/exec";
  *  If you edit this script later, use Deploy → Manage deployments → Edit → New version,
  *  so the URL stays the same.
  */
