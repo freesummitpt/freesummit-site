@@ -10,12 +10,12 @@ form_value = "Rock climbing at Guia (Cascais)"
 
 # Browser tab title and the description shown by Google / when shared
 title = "Rock climbing in Cascais · Free Summit"
-description = "Guided outdoor rock climbing at Guia, Cascais. No experience needed. Guide, climbing shoes, all gear and insurance included. From €45 per person."
+description = "Guided outdoor rock climbing at Guia, Cascais. No experience needed. Guide, climbing shoes, all gear and insurance included. From €40 per person."
 
 # Small line above the big heading
 place = "Cascais"
 # Big price in the hero
-price = "€45"
+price = "€40"
 # Button text when this activity is listed under "More activities" on other pages
 link = { en = "Rock climbing in Cascais", pt = "Escalada em Cascais" }
 
@@ -96,7 +96,7 @@ pt = "Recolha grátis na estação de Cascais"
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
-price = "€45"
+price = "€40"
 
 [[prices]]
 label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
@@ -116,7 +116,7 @@ price = "€75"
 
 [[prices]]
 label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
-price = "€110"
+price = "€95"
 
 [[prices]]
 label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }

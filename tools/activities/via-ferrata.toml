@@ -10,12 +10,12 @@ form_value = "Via Ferrata dos Pinheirinhos (Sesimbra)"
 
 # Browser tab title and the description shown by Google / when shared
 title = "Via ferrata in Sesimbra · Free Summit"
-description = "Guided via ferrata at Pinheirinhos, Sesimbra: 800 m along the sea cliffs of Arrábida. No climbing experience needed. Guide, gear and insurance included. €65 per person."
+description = "Guided via ferrata at Pinheirinhos, Sesimbra: 800 m along the sea cliffs of Arrábida. No climbing experience needed. Guide, gear and insurance included. From €60 per person."
 
 # Small line above the big heading
 place = "Sesimbra"
 # Big price in the hero
-price = "€65"
+price = "€60"
 # Button text when this activity is listed under "More activities" on other pages
 link = { en = "Via ferrata in Sesimbra", pt = "Via ferrata em Sesimbra" }
 
@@ -92,7 +92,7 @@ pt = "Seguro de actividade"
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
-price = "€65"
+price = "€60"
 
 [[prices]]
 label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
@@ -108,7 +108,7 @@ price = "€55"
 
 [[prices]]
 label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
-price = "€130"
+price = "€135"
 
 [[prices]]
 label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
