@@ -10,12 +10,12 @@ form_value = "Arrábida hiking tour"
 
 # Browser tab title and the description shown by Google / when shared
 title = "Hiking tour in Arrábida · Free Summit"
-description = "Guided half-day hike in the Serra da Arrábida Natural Park, near Lisbon. Ridges, sea views and Mediterranean scrub. Guide and insurance included. €35 per person."
+description = "Guided half-day hike in the Serra da Arrábida Natural Park, near Lisbon. Ridges, sea views and Mediterranean scrub. Guide and insurance included. From €30 per person."
 
 # Small line above the big heading
 place = "Arrábida"
 # Big price in the hero
-price = "€35"
+price = "€30"
 # Button text when this activity is listed under "More activities" on other pages
 link = { en = "Hiking in Arrábida", pt = "Caminhada na Arrábida" }
 
@@ -91,7 +91,7 @@ pt = "Seguro de actividade"
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
-price = "€35"
+price = "€30"
 
 [[prices]]
 label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
@@ -107,7 +107,7 @@ price = "€20"
 
 [[prices]]
 label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
-price = "€70"
+price = "€75"
 
 [[prices]]
 label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
