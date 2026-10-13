@@ -99,15 +99,11 @@ price = "€35"
 
 [[prices]]
 label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
-price = "€25"
-
-[[prices]]
-label = { en = "Children 12–15", pt = "Crianças 12–15" }
-price = "€20"
+price = "€30"
 
 [[prices]]
 label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
-price = "€75"
+price = "€70"
 
 [[prices]]
 label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }

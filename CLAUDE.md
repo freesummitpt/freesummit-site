@@ -52,7 +52,7 @@ routes, included, notes) and **Free Summit – Activity Pricing** (prices). When
 Hiking (Cabo da Roca, Sintra) and the two courses have no prices in the sheet yet: their pages show "On request / Sob consulta".
 Activity details and prices come from Lourenço's Google Drive: folder **Actividades** (one subfolder per location, one Google Doc per activity)
 and the sheet **Free Summit – Activity Pricing**. Brand guide in Drive folder **Branding** (note: its colours are the OLD forest-green palette; the site now uses cream + olive).
-The Arrábida hiking page content (route ~8 km, €35 / €20 children / €70 solo; age 12+ per the sheet) was drafted by Claude without a source doc — needs Lourenço's confirmation.
+The Arrábida hiking page content (route, description; prices now come from the pricing sheet) was drafted by Claude without a source doc — needs Lourenço's confirmation.
 
 ## Next planned work
 1. Lourenço is finalising which activities he will advertise.

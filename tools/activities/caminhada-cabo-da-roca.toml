@@ -10,12 +10,12 @@ form_value = "Cabo da Roca hiking tour"
 
 # Browser tab title and the description shown by Google / when shared
 title = "Hiking at Cabo da Roca · Free Summit"
-description = "Guided half-day coastal hike at Cabo da Roca, the westernmost point of mainland Europe, in the Sintra-Cascais Natural Park. Guide and insurance included. From €40 per person."
+description = "Guided half-day coastal hike at Cabo da Roca, the westernmost point of mainland Europe, in the Sintra-Cascais Natural Park. Guide and insurance included. From €30 per person."
 
 # Small line above the big heading
 place = "Cabo da Roca · Sintra"
 # Big price in the hero
-price = "€40"
+price = "€30"
 # Button text when this activity is listed under "More activities" on other pages
 link = { en = "Hiking at Cabo da Roca", pt = "Caminhada no Cabo da Roca" }
 
@@ -91,11 +91,11 @@ pt = "Seguro de actividade"
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
-price = "€40"
+price = "€30"
 
 [[prices]]
 label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
-price = "€40"
+price = "€35"
 
 [[prices]]
 label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
