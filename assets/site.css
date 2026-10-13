@@ -178,3 +178,9 @@ footer .meta{text-align:right;line-height:1.8}
 .more{padding:56px 0}
 .others{display:flex;flex-wrap:wrap;gap:12px}
 .section h2.h3{font-size:22px;margin:0 0 18px}
+
+/* Activity photo (assets/photos/<slug>.jpg, set by [photo] in the activity's .toml) */
+.act-photo{position:relative;margin:0;border-bottom:1.5px solid var(--ink);background:var(--ink)}
+.act-photo img{width:100%;height:auto;aspect-ratio:21/9;object-fit:cover;max-height:78vh}
+.act-photo figcaption{position:absolute;right:var(--gutter);bottom:10px;font-size:12px;font-weight:600;color:var(--cream);background:rgba(49,53,26,.7);padding:4px 8px;border-radius:2px}
+@media (max-width:640px){.act-photo img{aspect-ratio:4/3}}

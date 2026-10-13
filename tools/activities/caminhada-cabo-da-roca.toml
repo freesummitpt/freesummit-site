@@ -1,0 +1,161 @@
+# Activity page: Hike Cabo da Roca
+# Builds the page freesummitpt.com/caminhada-cabo-da-roca/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 6
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Cabo da Roca hiking tour"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Hiking at Cabo da Roca · Free Summit"
+description = "Guided half-day coastal hike at Cabo da Roca, the westernmost point of mainland Europe, in the Sintra-Cascais Natural Park. Guide and insurance included. From €40 per person."
+
+# Small line above the big heading
+place = "Cabo da Roca · Sintra"
+# Big price in the hero
+price = "€40"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Hiking at Cabo da Roca", pt = "Caminhada no Cabo da Roca" }
+
+# Big heading
+[heading]
+en = "Hike the edge of Europe"
+pt = "Caminhada no fim da Europa"
+
+# Text under the heading
+[intro]
+en = "A guided coastal walk from Cabo da Roca, the westernmost point of mainland Europe. Wild cliffs, hidden beaches and nothing but the Atlantic to the west."
+pt = "Uma caminhada guiada pela costa a partir do Cabo da Roca, o ponto mais ocidental da Europa continental. Falésias selvagens, praias escondidas e só o Atlântico a oeste."
+
+# Small text next to the big price
+[price_note]
+en = "per person · guide and insurance included"
+pt = "por pessoa · guia e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "4 hours", pt = "4 horas" }
+
+[[facts]]
+label = { en = "Distance", pt = "Distância" }
+value = { en = "10 km", pt = "10 km" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Beginner", pt = "Iniciação" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "12 years", pt = "12 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "2 to 8", pt = "2 a 8" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "caminhada-cabo-da-roca.jpg"
+alt = { en = "Hiker on a green coastal path above the Atlantic", pt = "Caminhante num trilho costeiro verde sobre o Atlântico" }
+credit = "Stock photo: Adrien Olichon / Unsplash"
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "Cabo da Roca is where the continent ends: a granite headland 140 m above the ocean, inside the Sintra-Cascais Natural Park. From the lighthouse we head out along the cliff paths, away from the crowds."
+pt = "O Cabo da Roca é onde o continente acaba: um promontório de granito a 140 m sobre o oceano, dentro do Parque Natural de Sintra-Cascais. Saímos do farol pelos trilhos da falésia, longe das multidões."
+
+[[about]]
+en = "The route takes in viewpoints over Praia da Ursa, one of the wildest beaches in Portugal, with its sea stacks rising out of the surf, and loops back through the village of Azóia and the low coastal scrub."
+pt = "O percurso passa por miradouros sobre a Praia da Ursa, uma das praias mais selvagens do país, com os seus rochedos a sair da rebentação, e regressa pela aldeia da Azóia e pelo mato rasteiro da costa."
+
+[[about]]
+en = "Your guide picks the route and timing for the wind and the weather, and tells you about the coast's geology, plants and history along the way. No technical gear needed: just good shoes and a normal level of fitness."
+pt = "O guia escolhe o percurso e o horário conforme o vento e o tempo, e fala-te da geologia, das plantas e da história da costa pelo caminho. Não precisas de material técnico: só de bom calçado e de uma forma física normal."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide with you the whole time"
+pt = "Guia sempre contigo"
+
+[[included]]
+en = "Route planning and timing for the weather"
+pt = "Escolha do percurso e do horário conforme o tempo"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€40"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€40"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€30"
+
+[[prices]]
+label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
+price = "€80"
+
+[[prices]]
+label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
+price = "+€20"
+
+[[prices]]
+label = { en = "Full day or a bigger route, planned for you", pt = "Dia inteiro ou percurso maior, à medida" }
+price = { en = "On request", pt = "Sob consulta" }
+
+# Note under the price table
+[price_table_note]
+en = "Minimum 2 participants per departure. Want a full day? We can plan a longer hike on demand, priced for your group. The cliffs can be very windy: we adapt the route or reschedule."
+pt = "Mínimo de 2 participantes por saída. Queres um dia inteiro? Planeamos uma caminhada maior à medida, com preço para o teu grupo. As falésias podem ter muito vento: adaptamos o percurso ou reagendamos."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Meet", pt = "Encontro" }
+text = { en = "Welcome and a short briefing at the Cabo da Roca lighthouse.", pt = "Boas-vindas e um briefing curto junto ao farol do Cabo da Roca." }
+
+[[plan]]
+step = { en = "Along the cliffs", pt = "Pelas falésias" }
+text = { en = "Coastal paths north, with the open Atlantic beside you.", pt = "Trilhos costeiros para norte, com o Atlântico ao lado." }
+
+[[plan]]
+step = { en = "Praia da Ursa", pt = "Praia da Ursa" }
+text = { en = "Viewpoints over the sea stacks, with a snack stop.", pt = "Miradouros sobre os rochedos, com paragem para o lanche." }
+
+[[plan]]
+step = { en = "Back via Azóia", pt = "Regresso pela Azóia" }
+text = { en = "A loop back through the village and the coastal scrub.", pt = "Volta pela aldeia e pelo mato costeiro." }
+
+[[plan]]
+step = { en = "Finish", pt = "Fim" }
+text = { en = "Back at the lighthouse after about 4 hours.", pt = "De volta ao farol ao fim de cerca de 4 horas." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trail or walking shoes with good grip. Some paths are sandy and steep.", pt = "sapatilhas de trilho ou de caminhada com boa aderência. Alguns trilhos são de areia e inclinados." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable layers and a windproof jacket, even in summer.", pt = "roupa confortável por camadas e um corta-vento, mesmo no verão." }
+
+[[bring]]
+item = { en = "Water:", pt = "Água:" }
+text = { en = "1.5 L and a snack.", pt = "1,5 L e um snack." }
+
+[[bring]]
+item = { en = "Sun:", pt = "Sol:" }
+text = { en = "sunscreen, sunglasses and a cap.", pt = "protector solar, óculos de sol e boné." }
+
+[[bring]]
+item = { en = "Backpack:", pt = "Mochila:" }
+text = { en = "a small one.", pt = "uma pequena." }

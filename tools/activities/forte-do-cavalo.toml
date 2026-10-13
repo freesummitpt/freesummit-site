@@ -1,0 +1,169 @@
+# Activity page: Rock climbing at Forte do Cavalo, Sesimbra
+# Builds the page freesummitpt.com/forte-do-cavalo/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 3
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Rock climbing at Forte do Cavalo (Sesimbra)"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Rock climbing in Sesimbra · Free Summit"
+description = "Guided sport climbing on the sea cliffs of Forte do Cavalo, Sesimbra. Beginners and experienced climbers. Guide, climbing shoes, all gear and insurance included. From €50 per person."
+
+# Small line above the big heading
+place = "Sesimbra"
+# Big price in the hero
+price = "€50"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Rock climbing in Sesimbra", pt = "Escalada em Sesimbra" }
+
+# Big heading
+[heading]
+en = "Climbing above Sesimbra bay"
+pt = "Escalada sobre a baía de Sesimbra"
+
+# Text under the heading
+[intro]
+en = "Short, well-bolted routes on the sea cliffs by the Cavalo lighthouse, with Sesimbra bay and the Arrábida coast in front of you."
+pt = "Vias curtas e bem equipadas nas falésias junto ao farol do Cavalo, com a baía de Sesimbra e a costa da Arrábida à tua frente."
+
+# Small text next to the big price
+[price_note]
+en = "per person · guide, gear and insurance included"
+pt = "por pessoa · guia, material e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "4 hours", pt = "4 horas" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Beginner to experienced", pt = "Iniciação a experiente" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "10 years", pt = "10 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "2 to 8", pt = "2 a 8" }
+
+[[facts]]
+label = { en = "Approach", pt = "Aproximação" }
+value = { en = "10 min", pt = "10 min" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "forte-do-cavalo.jpg"
+alt = { en = "Climber on an overhanging limestone wall against a blue sky", pt = "Escalador numa parede de calcário em extraprumo contra o céu azul" }
+credit = "Stock photo: Curdin / Unsplash"
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "A half day of sport climbing at Forte do Cavalo, also called Sesimbra Velha, next to the old fort and the Cavalo lighthouse just west of Sesimbra town."
+pt = "Um meio-dia de escalada desportiva no Forte do Cavalo, também conhecido como Sesimbra Velha, junto ao antigo forte e ao farol do Cavalo, logo a oeste da vila de Sesimbra."
+
+[[about]]
+en = "The crag has about 75 bolted routes right above the sea. We base the day in Portugal dos Pequeninos, the most popular sector, with routes of around 14 m. You climb on top-rope, with the guide setting every anchor and checking every belay."
+pt = "A falésia tem cerca de 75 vias equipadas mesmo por cima do mar. Passamos o dia no Portugal dos Pequeninos, o sector mais popular, com vias de cerca de 14 m. Escalas em top-rope, com o guia a montar todas as ancoragens e a verificar cada segurança."
+
+[[about]]
+en = "Good for beginners with some sporting background and for people who already climb. Pair it with the Pinheirinhos via ferrata, a few minutes away, for a full day in Sesimbra."
+pt = "Ideal para quem começa e já faz algum desporto, e para quem já escala. Junta-lhe a via ferrata dos Pinheirinhos, a poucos minutos, e fazes um dia inteiro em Sesimbra."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide with you the whole time"
+pt = "Guia sempre contigo"
+
+[[included]]
+en = "Harness, helmet and climbing shoes in all sizes"
+pt = "Arnês, capacete e sapatilhas de escalada em todos os tamanhos"
+
+[[included]]
+en = "Ropes, belay devices and chalk"
+pt = "Cordas, aparelhos de segurança e magnésio"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€50"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€55"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€45"
+
+[[prices]]
+label = { en = "Full day, 6 h (shared)", pt = "Dia inteiro, 6 h (partilhado)" }
+price = "€90"
+
+[[prices]]
+label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
+price = "€115"
+
+[[prices]]
+label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
+price = "+€30"
+
+[[prices]]
+label = { en = "Full day with the Pinheirinhos via ferrata", pt = "Dia inteiro com a via ferrata dos Pinheirinhos" }
+price = "€110"
+
+# Note under the price table
+[price_table_note]
+en = "Minimum 2 participants per departure. In summer we climb in the late afternoon, and we reschedule in strong wind, big swell or rain."
+pt = "Mínimo de 2 participantes por saída. No verão escalamos ao fim da tarde, e reagendamos com vento forte, ondulação grande ou chuva."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Meet", pt = "Encontro" }
+text = { en = "Welcome, gear fitting and safety briefing by the fort.", pt = "Boas-vindas, ajuste do material e briefing junto ao forte." }
+
+[[plan]]
+step = { en = "To the crag", pt = "Até à falésia" }
+text = { en = "About 10 minutes on foot to the Portugal dos Pequeninos sector.", pt = "Cerca de 10 minutos a pé até ao sector Portugal dos Pequeninos." }
+
+[[plan]]
+step = { en = "Skills", pt = "Técnica" }
+text = { en = "Knots, belaying and climbing calls. The guide checks every belay.", pt = "Nós, segurar e comandos de escalada. O guia verifica cada segurança." }
+
+[[plan]]
+step = { en = "Climb", pt = "Escalar" }
+text = { en = "Routes of rising difficulty above the sea, taking turns climbing and belaying.", pt = "Vias de dificuldade crescente sobre o mar, à vez a escalar e a segurar." }
+
+[[plan]]
+step = { en = "Finish", pt = "Fim" }
+text = { en = "Pack up, walk back and debrief.", pt = "Arrumar, regresso e conversa final." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trainers for the walk in (climbing shoes are provided).", pt = "ténis para a caminhada (as sapatilhas de escalada são nossas)." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable sports clothing that lets you move freely.", pt = "desportiva e confortável, que te deixe mexer à vontade." }
+
+[[bring]]
+item = { en = "Water:", pt = "Água:" }
+text = { en = "1 to 1.5 L and a snack.", pt = "1 a 1,5 L e um snack." }
+
+[[bring]]
+item = { en = "Sun:", pt = "Sol:" }
+text = { en = "sunscreen, sunglasses and a cap.", pt = "protector solar, óculos de sol e boné." }
+
+[[bring]]
+item = { en = "Backpack:", pt = "Mochila:" }
+text = { en = "a small one.", pt = "uma pequena." }

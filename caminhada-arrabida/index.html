@@ -38,7 +38,7 @@
     <p class="place-line">Arrábida</p>
     <h1 class="xb" id="h1" data-pt="Caminhada na Serra da Arrábida">Hike the Serra da Arrábida</h1>
     <p class="lead" data-pt="Uma caminhada guiada de meio-dia onde a serra encontra o mar, a 45 minutos de Lisboa. Cumeadas de calcário, ervas aromáticas e vistas sobre a água turquesa do Portinho.">A guided half-day walk where the mountains meet the sea, 45 minutes from Lisbon. Limestone ridges, wild herbs and views over the turquoise water of Portinho.</p>
-    <div class="hero-price"><b>€35</b><span data-pt="por pessoa · guia e seguro incluídos">per person · guide and insurance included</span></div>
+    <div class="hero-price"><b data-pt="€35">€35</b><span data-pt="por pessoa · guia e seguro incluídos">per person · guide and insurance included</span></div>
     <div class="btns">
       <a class="btn solid" href="#book" data-pt="Reservar">Book now</a>
       <a class="btn" href="#details" data-pt="Ver detalhes">See details</a>
@@ -47,8 +47,13 @@
 </section>
 
 <div class="strip">
-  <div class="wrap"><dl class="facts"><div><dt data-pt="Duração">Duration</dt><dd data-pt="~4 horas">~4 hours</dd></div><div><dt data-pt="Distância">Distance</dt><dd data-pt="~8 km">~8 km</dd></div><div><dt data-pt="Nível">Level</dt><dd data-pt="Moderado">Moderate</dd></div><div><dt data-pt="Idade mín.">Min. age</dt><dd data-pt="8 anos">8 years</dd></div><div><dt data-pt="Grupo">Group</dt><dd data-pt="2 a 10">2 to 10</dd></div></dl></div>
+  <div class="wrap"><dl class="facts"><div><dt data-pt="Duração">Duration</dt><dd data-pt="4 horas">4 hours</dd></div><div><dt data-pt="Distância">Distance</dt><dd data-pt="8 km">8 km</dd></div><div><dt data-pt="Nível">Level</dt><dd data-pt="Moderado">Moderate</dd></div><div><dt data-pt="Idade mín.">Min. age</dt><dd data-pt="12 anos">12 years</dd></div><div><dt data-pt="Grupo">Group</dt><dd data-pt="2 a 8">2 to 8</dd></div></dl></div>
 </div>
+
+<figure class="act-photo">
+  <img src="../assets/photos/caminhada-arrabida.jpg" alt="Group of hikers on a clifftop path above a turquoise bay" data-pt-alt="Grupo de caminhantes num trilho de falésia sobre uma baía turquesa" width="1600" height="1067" loading="lazy" decoding="async">
+  <figcaption>Stock photo: Tino Rischawy / Unsplash</figcaption>
+</figure>
 
 <section id="details" class="section" aria-labelledby="about-h">
   <div class="wrap two">
@@ -66,7 +71,6 @@
 <li data-pt="Guia que conhece a natureza e a história do parque">Guide who knows the park's nature and history</li>
 <li data-pt="Escolha do percurso e do horário conforme o tempo">Route planning and timing for the weather</li>
 <li data-pt="Seguro de actividade">Activity insurance</li>
-<li data-pt="Kit de primeiros socorros">First aid kit</li>
       </ul>
     </div>
   </div>
@@ -81,13 +85,14 @@
 <tr><th scope="row" data-pt="Grupo partilhado">Shared group</th><td data-pt="€35">€35</td></tr>
 <tr><th scope="row" data-pt="Privado, 2 pessoas (cada)">Private, 2 people (each)</th><td data-pt="€35">€35</td></tr>
 <tr><th scope="row" data-pt="Privado, cada pessoa a mais">Private, each extra person</th><td data-pt="€25">€25</td></tr>
-<tr><th scope="row" data-pt="Crianças 8–15">Children 8–15</th><td data-pt="€20">€20</td></tr>
+<tr><th scope="row" data-pt="Crianças 12–15">Children 12–15</th><td data-pt="€20">€20</td></tr>
 <tr><th scope="row" data-pt="Privado, 1 pessoa (total)">Solo private (total)</th><td data-pt="€70">€70</td></tr>
 <tr><th scope="row" data-pt="Transfer desde Lisboa, ida e volta">Transfer from Lisbon, round trip</th><td data-pt="+€30">+€30</td></tr>
 <tr><th scope="row" data-pt="Transfer desde Setúbal ou margem sul">Transfer from Setúbal or the south bank</th><td data-pt="+€15">+€15</td></tr>
+<tr><th scope="row" data-pt="Dia inteiro ou percurso maior, à medida">Full day or a bigger route, planned for you</th><td data-pt="Sob consulta">On request</td></tr>
       </tbody>
     </table>
-    <p class="note" data-pt="Mínimo de 2 participantes por saída. Melhor de Outubro a Junho; no verão começamos cedo para fugir ao calor.">Minimum 2 participants per departure. Best from October to June; in summer we start early to avoid the heat.</p>
+    <p class="note" data-pt="Mínimo de 2 participantes por saída. Queres um dia inteiro? Planeamos uma caminhada maior à medida, com preço para o teu grupo. Melhor de Outubro a Junho; no verão começamos cedo para fugir ao calor.">Minimum 2 participants per departure. Want a full day? We can plan a longer hike on demand, priced for your group. Best from October to June; in summer we start early to avoid the heat.</p>
   </div>
 </section>
 
@@ -135,11 +140,15 @@
         <label for="f-activity" data-pt="Actividade">Activity</label>
         <select id="f-activity" name="activity" required>
 <option value="Rock climbing at Guia (Cascais)" data-pt="Escalada na Guia (Cascais)">Rock climbing at Guia (Cascais)</option>
-<option value="Via Ferrata dos Pinheirinhos (Sesimbra)">Via Ferrata dos Pinheirinhos (Sesimbra)</option>
-<option value="Arrábida hiking tour" data-pt="Caminhada na Serra da Arrábida">Arrábida hiking tour</option>
 <option value="Rock climbing at Fenda da Arrábida" data-pt="Escalada na Fenda da Arrábida">Rock climbing at Fenda da Arrábida</option>
 <option value="Rock climbing at Forte do Cavalo (Sesimbra)" data-pt="Escalada no Forte do Cavalo (Sesimbra)">Rock climbing at Forte do Cavalo (Sesimbra)</option>
+<option value="Via Ferrata dos Pinheirinhos (Sesimbra)">Via Ferrata dos Pinheirinhos (Sesimbra)</option>
 <option value="Full day in Sesimbra (combo)" data-pt="Dia inteiro em Sesimbra (combo)">Full day in Sesimbra (combo)</option>
+<option value="Arrábida hiking tour" data-pt="Caminhada na Serra da Arrábida">Arrábida hiking tour</option>
+<option value="Cabo da Roca hiking tour" data-pt="Caminhada no Cabo da Roca">Cabo da Roca hiking tour</option>
+<option value="Sintra hiking tour" data-pt="Caminhada na Serra de Sintra">Sintra hiking tour</option>
+<option value="Climbing course: Introduction to sport climbing" data-pt="Curso: Iniciação à escalada desportiva">Climbing course: Introduction to sport climbing</option>
+<option value="Climbing course: Multipitch" data-pt="Curso: Escalada em vias longas">Climbing course: Multipitch</option>
 <option value="Not sure yet" data-pt="Ainda não sei">Not sure yet</option>
         </select>
       </div>
@@ -176,7 +185,13 @@
     <h2 class="h3" id="more-h" data-pt="Mais actividades">More activities</h2>
     <div class="others">
 <a class="btn" href="../guia/" data-pt="Escalada em Cascais">Rock climbing in Cascais</a>
+<a class="btn" href="../fenda-arrabida/" data-pt="Escalada na Arrábida">Rock climbing in Arrábida</a>
+<a class="btn" href="../forte-do-cavalo/" data-pt="Escalada em Sesimbra">Rock climbing in Sesimbra</a>
 <a class="btn" href="../via-ferrata/" data-pt="Via ferrata em Sesimbra">Via ferrata in Sesimbra</a>
+<a class="btn" href="../caminhada-cabo-da-roca/" data-pt="Caminhada no Cabo da Roca">Hiking at Cabo da Roca</a>
+<a class="btn" href="../caminhada-sintra/" data-pt="Caminhada em Sintra">Hiking in Sintra</a>
+<a class="btn" href="../curso-escalada/" data-pt="Curso de escalada desportiva">Sport climbing course</a>
+<a class="btn" href="../curso-multipitch/" data-pt="Curso de vias longas">Multipitch course</a>
 <a class="btn solid" href="../#climbing" data-pt="Ver todas">See all</a>
     </div>
   </div>

@@ -10,12 +10,12 @@ form_value = "Rock climbing at Guia (Cascais)"
 
 # Browser tab title and the description shown by Google / when shared
 title = "Rock climbing in Cascais · Free Summit"
-description = "Guided outdoor rock climbing at Guia, Cascais. No experience needed. Guide, climbing shoes, all gear and insurance included. From €45 per person."
+description = "Guided outdoor rock climbing at Guia, Cascais. No experience needed. Guide, climbing shoes, all gear and insurance included. From €40 per person."
 
 # Small line above the big heading
 place = "Cascais"
 # Big price in the hero
-price = "€45"
+price = "€40"
 # Button text when this activity is listed under "More activities" on other pages
 link = { en = "Rock climbing in Cascais", pt = "Escalada em Cascais" }
 
@@ -37,7 +37,7 @@ pt = "por pessoa · guia, material e seguro incluídos"
 # --- Key facts strip (one [[facts]] block per fact) ---
 [[facts]]
 label = { en = "Duration", pt = "Duração" }
-value = { en = "~4 hours", pt = "~4 horas" }
+value = { en = "4 hours", pt = "4 horas" }
 
 [[facts]]
 label = { en = "Level", pt = "Nível" }
@@ -49,11 +49,18 @@ value = { en = "10 years", pt = "10 anos" }
 
 [[facts]]
 label = { en = "Group", pt = "Grupo" }
-value = { en = "2 to 6", pt = "2 a 6" }
+value = { en = "2 to 8", pt = "2 a 8" }
 
 [[facts]]
 label = { en = "Approach", pt = "Aproximação" }
 value = { en = "Under 5 min", pt = "Menos de 5 min" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "guia.jpg"
+alt = { en = "Climber on a top-rope route on a grey rock face", pt = "Escalador numa via em top-rope numa parede de rocha cinzenta" }
+credit = "Stock photo: Connor Moynihan / Unsplash"
 
 # --- "The activity": one [[about]] block per paragraph ---
 [[about]]
@@ -96,7 +103,7 @@ pt = "Recolha grátis na estação de Cascais"
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
-price = "€45"
+price = "€40"
 
 [[prices]]
 label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
@@ -107,16 +114,12 @@ label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" 
 price = "€35"
 
 [[prices]]
-label = { en = "Children 10–15", pt = "Crianças 10–15" }
-price = "€35"
-
-[[prices]]
-label = { en = "Full day, ~6 h (shared)", pt = "Dia inteiro, ~6 h (partilhado)" }
+label = { en = "Full day, 6 h (shared)", pt = "Dia inteiro, 6 h (partilhado)" }
 price = "€75"
 
 [[prices]]
 label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
-price = "€110"
+price = "€95"
 
 [[prices]]
 label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }

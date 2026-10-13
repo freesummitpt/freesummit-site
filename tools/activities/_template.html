@@ -10,6 +10,7 @@
   {{slug}}            -> the page's folder name (from the file name, e.g. guia)
   {{#other_pages}}    -> every other activity page (for "More activities")
   {{#form_options}}   -> the activities listed in _shared.toml
+  {{#photo}}          -> the big photo under the facts strip ([photo] in the .toml)
   Notes written like this one (starting with an opening brace pair,
   "!" and two dashes) are not copied to the pages.
 ================================================================ --}}
@@ -53,7 +54,7 @@
     <p class="place-line">{{place}}</p>
     <h1 class="xb" id="h1" data-pt="{{heading.pt}}">{{heading.en}}</h1>
     <p class="lead" data-pt="{{intro.pt}}">{{intro.en}}</p>
-    <div class="hero-price"><b>{{price}}</b><span data-pt="{{price_note.pt}}">{{price_note.en}}</span></div>
+    <div class="hero-price"><b data-pt="{{price.pt}}">{{price.en}}</b><span data-pt="{{price_note.pt}}">{{price_note.en}}</span></div>
     <div class="btns">
       <a class="btn solid" href="#book" data-pt="Reservar">Book now</a>
       <a class="btn" href="#details" data-pt="Ver detalhes">See details</a>
@@ -64,6 +65,13 @@
 <div class="strip">
   <div class="wrap"><dl class="facts">{{#facts}}<div><dt data-pt="{{label.pt}}">{{label.en}}</dt><dd data-pt="{{value.pt}}">{{value.en}}</dd></div>{{/facts}}</dl></div>
 </div>
+
+{{#photo}}
+<figure class="act-photo">
+  <img src="../assets/photos/{{file}}" alt="{{alt.en}}" data-pt-alt="{{alt.pt}}" width="1600" height="1067" loading="lazy" decoding="async">
+  {{#credit}}<figcaption>{{credit}}</figcaption>{{/credit}}
+</figure>
+{{/photo}}
 
 <section id="details" class="section" aria-labelledby="about-h">
   <div class="wrap two">

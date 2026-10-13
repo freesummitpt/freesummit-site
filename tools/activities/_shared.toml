@@ -8,13 +8,6 @@ value = "Rock climbing at Guia (Cascais)"
 pt = "Escalada na Guia (Cascais)"
 
 [[form_options]]
-value = "Via Ferrata dos Pinheirinhos (Sesimbra)"
-
-[[form_options]]
-value = "Arrábida hiking tour"
-pt = "Caminhada na Serra da Arrábida"
-
-[[form_options]]
 value = "Rock climbing at Fenda da Arrábida"
 pt = "Escalada na Fenda da Arrábida"
 
@@ -23,8 +16,31 @@ value = "Rock climbing at Forte do Cavalo (Sesimbra)"
 pt = "Escalada no Forte do Cavalo (Sesimbra)"
 
 [[form_options]]
+value = "Via Ferrata dos Pinheirinhos (Sesimbra)"
+
+[[form_options]]
 value = "Full day in Sesimbra (combo)"
 pt = "Dia inteiro em Sesimbra (combo)"
+
+[[form_options]]
+value = "Arrábida hiking tour"
+pt = "Caminhada na Serra da Arrábida"
+
+[[form_options]]
+value = "Cabo da Roca hiking tour"
+pt = "Caminhada no Cabo da Roca"
+
+[[form_options]]
+value = "Sintra hiking tour"
+pt = "Caminhada na Serra de Sintra"
+
+[[form_options]]
+value = "Climbing course: Introduction to sport climbing"
+pt = "Curso: Iniciação à escalada desportiva"
+
+[[form_options]]
+value = "Climbing course: Multipitch"
+pt = "Curso: Escalada em vias longas"
 
 [[form_options]]
 value = "Not sure yet"

@@ -20,6 +20,10 @@ function setLang(l){
     if(el.dataset.enPlaceholder === undefined) el.dataset.enPlaceholder = el.placeholder;
     el.placeholder = l === 'pt' ? el.dataset.ptPlaceholder : el.dataset.enPlaceholder;
   });
+  document.querySelectorAll('img[data-pt-alt]').forEach(img=>{
+    if(img.dataset.enAlt === undefined) img.dataset.enAlt = img.alt;
+    img.alt = l === 'pt' ? img.dataset.ptAlt : img.dataset.enAlt;
+  });
   document.querySelectorAll('td[data-label-pt]').forEach(td=>{
     if(td.dataset.labelEn === undefined) td.dataset.labelEn = td.dataset.label;
     td.dataset.label = l === 'pt' ? td.dataset.labelPt : td.dataset.labelEn;

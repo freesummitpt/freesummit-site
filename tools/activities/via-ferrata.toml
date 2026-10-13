@@ -4,18 +4,18 @@
 # After editing, run:  python tools/build_pages.py
 
 # Position in the "More activities" buttons on the other pages
-order = 2
+order = 4
 # Activity pre-selected in the booking form. Must match a value in _shared.toml
 form_value = "Via Ferrata dos Pinheirinhos (Sesimbra)"
 
 # Browser tab title and the description shown by Google / when shared
 title = "Via ferrata in Sesimbra · Free Summit"
-description = "Guided via ferrata at Pinheirinhos, Sesimbra: 800 m along the sea cliffs of Arrábida. No climbing experience needed. Guide, gear and insurance included. €65 per person."
+description = "Guided via ferrata at Pinheirinhos, Sesimbra: 800 m along the sea cliffs of Arrábida. No climbing experience needed. Guide, gear and insurance included. From €60 per person."
 
 # Small line above the big heading
 place = "Sesimbra"
 # Big price in the hero
-price = "€65"
+price = "€60"
 # Button text when this activity is listed under "More activities" on other pages
 link = { en = "Via ferrata in Sesimbra", pt = "Via ferrata em Sesimbra" }
 
@@ -37,7 +37,7 @@ pt = "por pessoa · guia, material e seguro incluídos"
 # --- Key facts strip (one [[facts]] block per fact) ---
 [[facts]]
 label = { en = "Duration", pt = "Duração" }
-value = { en = "~4 hours", pt = "~4 horas" }
+value = { en = "4 hours", pt = "4 horas" }
 
 [[facts]]
 label = { en = "Route", pt = "Percurso" }
@@ -49,11 +49,18 @@ value = { en = "195 m", pt = "195 m" }
 
 [[facts]]
 label = { en = "Min. age", pt = "Idade mín." }
-value = { en = "12 years", pt = "12 anos" }
+value = { en = "16 years", pt = "16 anos" }
 
 [[facts]]
 label = { en = "Group", pt = "Grupo" }
 value = { en = "2 to 8", pt = "2 a 8" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "via-ferrata.jpg"
+alt = { en = "Person in a helmet clipped to the steel cable of a via ferrata above a valley", pt = "Pessoa de capacete presa ao cabo de aço de uma via ferrata sobre um vale" }
+credit = "Stock photo: Maja Kochanowska / Unsplash"
 
 # --- "The activity": one [[about]] block per paragraph ---
 [[about]]
@@ -65,8 +72,8 @@ en = "The route traverses the cliffs on steel cables, rungs and some fixed ropes
 pt = "O percurso atravessa as falésias por cabos de aço, degraus e algumas cordas fixas. Estás sempre preso com um kit de via ferrata com absorvedor de energia, e o guia vai contigo em todas as secções, com corda para os passos mais difíceis."
 
 [[about]]
-en = "It is very exposed and very beautiful. It suits active adults and teenagers who feel fine with heights and can walk and scramble for 3 to 4 hours."
-pt = "É muito aéreo e muito bonito. É indicado para adultos e jovens activos que se sintam bem nas alturas e aguentem 3 a 4 horas a caminhar e trepar."
+en = "It is very exposed and very beautiful. It suits active adults (16 and over) who feel fine with heights and can walk and scramble for 3 to 4 hours."
+pt = "É muito aéreo e muito bonito. É indicado para adultos activos (a partir dos 16 anos) que se sintam bem nas alturas e aguentem 3 a 4 horas a caminhar e trepar."
 
 # --- "Included" list ---
 [[included]]
@@ -92,7 +99,7 @@ pt = "Seguro de actividade"
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
-price = "€65"
+price = "€60"
 
 [[prices]]
 label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
@@ -103,12 +110,8 @@ label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" 
 price = "€55"
 
 [[prices]]
-label = { en = "Teens 12–15", pt = "Jovens 12–15" }
-price = "€55"
-
-[[prices]]
 label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
-price = "€130"
+price = "€135"
 
 [[prices]]
 label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }

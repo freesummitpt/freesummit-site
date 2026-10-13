@@ -1,0 +1,157 @@
+# Activity page: Hike the Serra de Sintra
+# Builds the page freesummitpt.com/caminhada-sintra/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 7
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Sintra hiking tour"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Hiking in Sintra · Free Summit"
+description = "Guided half-day hike in the Serra de Sintra: misty forests, granite boulders and views over the palaces and the Atlantic. Guide and insurance included. From €40 per person."
+
+# Small line above the big heading
+place = "Sintra"
+# Big price in the hero
+price = "€40"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Hiking in Sintra", pt = "Caminhada em Sintra" }
+
+# Big heading
+[heading]
+en = "Hike the Serra de Sintra"
+pt = "Caminhada na Serra de Sintra"
+
+# Text under the heading
+[intro]
+en = "A guided walk through the misty forests of Sintra, 40 minutes from Lisbon. Mossy granite, old trails and views over the palaces all the way to the sea."
+pt = "Uma caminhada guiada pelas florestas de Sintra, a 40 minutos de Lisboa. Granito coberto de musgo, trilhos antigos e vistas sobre os palácios até ao mar."
+
+# Small text next to the big price
+[price_note]
+en = "per person · guide and insurance included"
+pt = "por pessoa · guia e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "4 hours", pt = "4 horas" }
+
+[[facts]]
+label = { en = "Distance", pt = "Distância" }
+value = { en = "8 km", pt = "8 km" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Beginner", pt = "Iniciação" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "12 years", pt = "12 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "2 to 8", pt = "2 a 8" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "caminhada-sintra.jpg"
+alt = { en = "Group of hikers on a forest trail among tall trees", pt = "Grupo de caminhantes num trilho de floresta entre árvores altas" }
+credit = "Stock photo: Waldemar Brandt / Unsplash"
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "The Serra de Sintra is a small mountain range with its own climate: Atlantic mist rolls in over the ridge and feeds forests of oak, cork, pine and giant ferns. It is part of the Sintra-Cascais Natural Park and of a UNESCO World Heritage landscape."
+pt = "A Serra de Sintra é uma pequena serra com clima próprio: a neblina do Atlântico entra pela serra e alimenta florestas de carvalhos, sobreiros, pinheiros e fetos gigantes. Faz parte do Parque Natural de Sintra-Cascais e de uma paisagem classificada Património Mundial pela UNESCO."
+
+[[about]]
+en = "We follow quiet trails away from the tourist queues, past granite boulders and old walls, up towards Cruz Alta, the highest point of the range at 528 m. On a clear day you see the Pena Palace, the Moorish Castle walls, the coast and, far off, Lisbon."
+pt = "Seguimos trilhos tranquilos, longe das filas de turistas, entre blocos de granito e muros antigos, até perto da Cruz Alta, o ponto mais alto da serra, a 528 m. Num dia limpo vês o Palácio da Pena, as muralhas do Castelo dos Mouros, a costa e, ao longe, Lisboa."
+
+[[about]]
+en = "Your guide tells you about the forest, the legends and the history of the hills. No technical gear needed: just good shoes and a normal level of fitness. Palace entry is not part of the hike."
+pt = "O guia fala-te da floresta, das lendas e da história da serra. Não precisas de material técnico: só de bom calçado e de uma forma física normal. A entrada nos palácios não faz parte da caminhada."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide with you the whole time"
+pt = "Guia sempre contigo"
+
+[[included]]
+en = "Route planning and timing for the weather"
+pt = "Escolha do percurso e do horário conforme o tempo"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€40"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€40"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€30"
+
+[[prices]]
+label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
+price = "€80"
+
+[[prices]]
+label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
+price = "+€20"
+
+[[prices]]
+label = { en = "Full day or a bigger route, planned for you", pt = "Dia inteiro ou percurso maior, à medida" }
+price = { en = "On request", pt = "Sob consulta" }
+
+# Note under the price table
+[price_table_note]
+en = "Minimum 2 participants per departure. Want a full day? We can plan a longer hike on demand, priced for your group. Sintra is cooler and damper than Lisbon all year, which makes it a great summer hike."
+pt = "Mínimo de 2 participantes por saída. Queres um dia inteiro? Planeamos uma caminhada maior à medida, com preço para o teu grupo. Sintra é mais fresca e húmida do que Lisboa todo o ano, o que a torna uma óptima caminhada de verão."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Meet", pt = "Encontro" }
+text = { en = "Welcome and a short briefing in Sintra.", pt = "Boas-vindas e um briefing curto em Sintra." }
+
+[[plan]]
+step = { en = "Into the forest", pt = "Pela floresta" }
+text = { en = "A steady climb on old trails through the trees.", pt = "Uma subida tranquila por trilhos antigos entre as árvores." }
+
+[[plan]]
+step = { en = "The high ground", pt = "No alto" }
+text = { en = "Viewpoints over the palaces and the coast, with a snack stop.", pt = "Miradouros sobre os palácios e a costa, com paragem para o lanche." }
+
+[[plan]]
+step = { en = "Down the other side", pt = "Descida" }
+text = { en = "A different path back through the forest.", pt = "Um caminho diferente de volta pela floresta." }
+
+[[plan]]
+step = { en = "Finish", pt = "Fim" }
+text = { en = "Back at the start after about 4 hours.", pt = "De volta ao início ao fim de cerca de 4 horas." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trail or walking shoes with good grip. Paths can be wet and slippery.", pt = "sapatilhas de trilho ou de caminhada com boa aderência. Os trilhos podem estar molhados e escorregadios." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable layers and a light rain jacket.", pt = "roupa confortável por camadas e um impermeável leve." }
+
+[[bring]]
+item = { en = "Water:", pt = "Água:" }
+text = { en = "1.5 L and a snack.", pt = "1,5 L e um snack." }
+
+[[bring]]
+item = { en = "Backpack:", pt = "Mochila:" }
+text = { en = "a small one.", pt = "uma pequena." }

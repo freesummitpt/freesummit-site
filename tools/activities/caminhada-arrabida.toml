@@ -4,7 +4,7 @@
 # After editing, run:  python tools/build_pages.py
 
 # Position in the "More activities" buttons on the other pages
-order = 3
+order = 5
 # Activity pre-selected in the booking form. Must match a value in _shared.toml
 form_value = "Arrábida hiking tour"
 
@@ -37,11 +37,11 @@ pt = "por pessoa · guia e seguro incluídos"
 # --- Key facts strip (one [[facts]] block per fact) ---
 [[facts]]
 label = { en = "Duration", pt = "Duração" }
-value = { en = "~4 hours", pt = "~4 horas" }
+value = { en = "4 hours", pt = "4 horas" }
 
 [[facts]]
 label = { en = "Distance", pt = "Distância" }
-value = { en = "~8 km", pt = "~8 km" }
+value = { en = "8 km", pt = "8 km" }
 
 [[facts]]
 label = { en = "Level", pt = "Nível" }
@@ -49,11 +49,18 @@ value = { en = "Moderate", pt = "Moderado" }
 
 [[facts]]
 label = { en = "Min. age", pt = "Idade mín." }
-value = { en = "8 years", pt = "8 anos" }
+value = { en = "12 years", pt = "12 anos" }
 
 [[facts]]
 label = { en = "Group", pt = "Grupo" }
-value = { en = "2 to 10", pt = "2 a 10" }
+value = { en = "2 to 8", pt = "2 a 8" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "caminhada-arrabida.jpg"
+alt = { en = "Group of hikers on a clifftop path above a turquoise bay", pt = "Grupo de caminhantes num trilho de falésia sobre uma baía turquesa" }
+credit = "Stock photo: Tino Rischawy / Unsplash"
 
 # --- "The activity": one [[about]] block per paragraph ---
 [[about]]
@@ -81,10 +88,6 @@ pt = "Escolha do percurso e do horário conforme o tempo"
 en = "Activity insurance"
 pt = "Seguro de actividade"
 
-[[included]]
-en = "First aid kit"
-pt = "Kit de primeiros socorros"
-
 # --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
 [[prices]]
 label = { en = "Shared group", pt = "Grupo partilhado" }
@@ -99,7 +102,7 @@ label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" 
 price = "€25"
 
 [[prices]]
-label = { en = "Children 8–15", pt = "Crianças 8–15" }
+label = { en = "Children 12–15", pt = "Crianças 12–15" }
 price = "€20"
 
 [[prices]]
@@ -114,10 +117,14 @@ price = "+€30"
 label = { en = "Transfer from Setúbal or the south bank", pt = "Transfer desde Setúbal ou margem sul" }
 price = "+€15"
 
+[[prices]]
+label = { en = "Full day or a bigger route, planned for you", pt = "Dia inteiro ou percurso maior, à medida" }
+price = { en = "On request", pt = "Sob consulta" }
+
 # Note under the price table
 [price_table_note]
-en = "Minimum 2 participants per departure. Best from October to June; in summer we start early to avoid the heat."
-pt = "Mínimo de 2 participantes por saída. Melhor de Outubro a Junho; no verão começamos cedo para fugir ao calor."
+en = "Minimum 2 participants per departure. Want a full day? We can plan a longer hike on demand, priced for your group. Best from October to June; in summer we start early to avoid the heat."
+pt = "Mínimo de 2 participantes por saída. Queres um dia inteiro? Planeamos uma caminhada maior à medida, com preço para o teu grupo. Melhor de Outubro a Junho; no verão começamos cedo para fugir ao calor."
 
 # --- "The plan" timeline ---
 [[plan]]

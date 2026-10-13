@@ -1,0 +1,149 @@
+# Activity page: Climbing course, multipitch
+# Builds the page freesummitpt.com/curso-multipitch/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 9
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Climbing course: Multipitch"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Multipitch climbing course · Free Summit"
+description = "4-day multipitch climbing course in Cabo Espichel, Sintra and Santa Luzia. Build belay stations, manage the rope and abseil safely. For climbers who already lead sport routes. Minimum 2 people. From €290 per person."
+
+# Small line above the big heading
+place = "Cabo Espichel · Sintra · Santa Luzia"
+# Big price in the hero
+price = "€290"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Multipitch course", pt = "Curso de vias longas" }
+
+# Big heading
+[heading]
+en = "Multipitch climbing course"
+pt = "Curso de escalada em vias longas"
+
+# Text under the heading
+[intro]
+en = "Four days to take your climbing off the ground: longer routes, belay stations, rope work and abseils, on sea cliffs and granite walls."
+pt = "Quatro dias para levares a tua escalada mais alto: vias longas, reuniões, gestão de corda e rapel, em falésias sobre o mar e paredes de granito."
+
+# Small text next to the big price
+[price_note]
+en = "per person · 4 days · min. 2 people · guide, technical gear and insurance included"
+pt = "por pessoa · 4 dias · mín. 2 pessoas · guia, material técnico e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "4 days", pt = "4 dias" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Intermediate", pt = "Intermédio" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "16 years", pt = "16 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "Min. 2 · max. 8", pt = "Mín. 2 · máx. 8" }
+
+[[facts]]
+label = { en = "You need", pt = "Requisito" }
+value = { en = "To lead sport routes", pt = "Escalar à frente" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "curso-multipitch.jpg"
+alt = { en = "Climber abseiling down a tall rock wall", pt = "Escalador a descer em rapel uma parede de rocha alta" }
+credit = "Stock photo: Jonathan Ouimet / Unsplash"
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "For climbers who already lead sport routes and want to go higher. Over four days you learn to climb routes of several pitches with a partner, from the first belay station to the last abseil."
+pt = "Para quem já escala à frente em vias desportivas e quer ir mais alto. Em quatro dias aprendes a escalar vias de vários largos com um parceiro, da primeira reunião ao último rapel."
+
+[[about]]
+en = "We cover building and managing belay stations, belaying a leader and a second from above, rope management on small ledges, changeovers, abseil descents and the basics of self-rescue."
+pt = "Trabalhamos a montagem e gestão de reuniões, segurar quem vai à frente e quem vem atrás a partir de cima, gestão de corda em pequenas plataformas, trocas de líder, descidas em rapel e as bases do auto-resgate."
+
+[[about]]
+en = "The course moves between the limestone sea cliffs of Cabo Espichel, the granite of Sintra and the walls of Santa Luzia, chosen for the weather, so you practise on very different rock."
+pt = "O curso passa pelas falésias de calcário do Cabo Espichel, pelo granito de Sintra e pelas paredes de Santa Luzia, escolhidas conforme o tempo, para praticares em rochas muito diferentes."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide and instructor on all 4 days"
+pt = "Guia e instrutor nos 4 dias"
+
+[[included]]
+en = "Harness"
+pt = "Arnês"
+
+[[included]]
+en = "Ropes, belay devices and the specific gear for the course"
+pt = "Cordas, aparelhos de segurança e o material específico do curso"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€290"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€300"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€290"
+
+[[prices]]
+label = { en = "Transfer from Lisbon", pt = "Transfer desde Lisboa" }
+price = "+€40"
+
+# Note under the price table
+[price_table_note]
+en = "The course runs with a minimum of 2 people: it is not available for one person on their own. Prices are per person for the full 4 days. Ask us for the next dates; crags change with the weather."
+pt = "O curso só se realiza com um mínimo de 2 pessoas: não está disponível para uma pessoa sozinha. Os preços são por pessoa para os 4 dias. Pede-nos as próximas datas; as falésias mudam conforme o tempo."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Day 1 · Systems", pt = "Dia 1 · Sistemas" }
+text = { en = "Belay stations, belaying from above and rope management, close to the ground.", pt = "Reuniões, segurar de cima e gestão de corda, perto do chão." }
+
+[[plan]]
+step = { en = "Day 2 · First multipitch", pt = "Dia 2 · Primeira via longa" }
+text = { en = "A first route of several pitches, with the guide alongside.", pt = "Uma primeira via de vários largos, com o guia ao lado." }
+
+[[plan]]
+step = { en = "Day 3 · Descents", pt = "Dia 3 · Descidas" }
+text = { en = "Abseils, changeovers and self-rescue basics.", pt = "Rapel, trocas e bases de auto-resgate." }
+
+[[plan]]
+step = { en = "Day 4 · Your route", pt = "Dia 4 · A tua via" }
+text = { en = "You lead the whole route in pairs, with the guide watching.", pt = "Escalas a via toda a pares, com o guia a acompanhar." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Climbing shoes:", pt = "Sapatilhas de escalada:" }
+text = { en = "your own pair.", pt = "as tuas." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "sports clothing, a warm layer and a windproof jacket.", pt = "desportiva, um agasalho e um corta-vento." }
+
+[[bring]]
+item = { en = "Food:", pt = "Comida:" }
+text = { en = "lunch, snacks and 1.5 L of water each day.", pt = "almoço, snacks e 1,5 L de água por dia." }
+
+[[bring]]
+item = { en = "Backpack:", pt = "Mochila:" }
+text = { en = "a small climbing pack you can carry on the route.", pt = "uma mochila pequena que possas levar na via." }

@@ -8,9 +8,10 @@ This repo IS the website. It is plain static HTML/CSS/JS hosted on **GitHub Page
 ## Structure
 ```
 index.html                 Homepage: activities grouped by type, "from €xx" per location, booking form
-guia/                      Activity page: rock climbing at Guia, Cascais          (generated)
-via-ferrata/               Activity page: Via Ferrata dos Pinheirinhos, Sesimbra   (generated)
-caminhada-arrabida/        Activity page: hiking in Serra da Arrábida              (generated)
+<slug>/index.html          Activity pages (generated): guia, fenda-arrabida, forte-do-cavalo, via-ferrata,
+                           caminhada-arrabida, caminhada-cabo-da-roca, caminhada-sintra, curso-escalada, curso-multipitch
+assets/photos/<slug>.jpg   Big photo on each activity page ([photo] in the .toml). Currently Unsplash STOCK placeholders
+                           with a credit line; Lourenço will replace them with his own (same file name, remove `credit`).
 assets/site.css            ONE stylesheet for every page (design tokens at the top)
 assets/main.js             Shared JS: PT/EN toggle, contour hero, booking form
 assets/config.js           Site settings (form endpoint, contact email). Only file edited by hand.
@@ -40,15 +41,18 @@ The homepage `index.html` is hand-written.
 - The script appends a row to the "Pedidos" table in the Google Sheet **Booking Requests** (owner admin@freesummitpt.com)
   and emails admin@freesummitpt.com. Columns: Received, Name, Email, Phone, Activity, Date, People, Type, Transfer,
   Message, Language, Page, Status (dropdown: New/Replied/Booked/Done/Cancelled).
-- `Page` = `<body data-page="...">` of the page that sent it (home, guia, via-ferrata, caminhada-arrabida). Keep this for ad tracking.
+- `Page` = `<body data-page="...">` of the page that sent it (home, or the activity page's folder name). Keep this for ad tracking.
 - Activity pages pre-select their activity via `<form data-activity="...">`. Links with `data-select="<activity>"` pre-select too.
 - Activity `<option value>`s are what land in the sheet — keep them stable.
 - To update the script: Apps Script → Deploy → Manage deployments → Edit → New version (keeps the same /exec URL).
 
 ## Source content
+**Source of truth = Google Sheets** in admin@freesummitpt.com's Drive: **Lista de actividades** (activities, ages, levels, group sizes,
+routes, included, notes) and **Free Summit – Activity Pricing** (prices). When they disagree with the Drive docs or the site, the sheets win.
+Hiking (Cabo da Roca, Sintra) and the two courses have no prices in the sheet yet: their pages show "On request / Sob consulta".
 Activity details and prices come from Lourenço's Google Drive: folder **Actividades** (one subfolder per location, one Google Doc per activity)
 and the sheet **Free Summit – Activity Pricing**. Brand guide in Drive folder **Branding** (note: its colours are the OLD forest-green palette; the site now uses cream + olive).
-The Arrábida hiking page content (route ~8 km, €35 / €20 children / €70 solo, age 8+) was drafted by Claude without a source doc — needs Lourenço's confirmation.
+The Arrábida hiking page content (route ~8 km, €35 / €20 children / €70 solo; age 12+ per the sheet) was drafted by Claude without a source doc — needs Lourenço's confirmation.
 
 ## Next planned work
 1. Lourenço is finalising which activities he will advertise.

@@ -1,0 +1,149 @@
+# Activity page: Climbing course, introduction to sport climbing
+# Builds the page freesummitpt.com/curso-escalada/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 8
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Climbing course: Introduction to sport climbing"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Sport climbing course · Free Summit"
+description = "4-day introduction to sport climbing near Lisbon, in Arrábida, Sesimbra, Cascais and Sintra. Learn to lead, belay and climb on your own safely. Minimum 2 people. Guide, gear and insurance included. From €250 per person."
+
+# Small line above the big heading
+place = "Arrábida · Sesimbra · Cascais · Sintra"
+# Big price in the hero
+price = "€250"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Sport climbing course", pt = "Curso de escalada desportiva" }
+
+# Big heading
+[heading]
+en = "Learn to climb outdoors"
+pt = "Aprende a escalar na rocha"
+
+# Text under the heading
+[intro]
+en = "A 4-day course that takes you from your first moves on rock to leading sport routes and belaying your partner on your own, safely."
+pt = "Um curso de 4 dias que te leva dos primeiros movimentos na rocha até escalares vias desportivas à frente e segurares o teu parceiro, com autonomia e segurança."
+
+# Small text next to the big price
+[price_note]
+en = "per person · 4 days · min. 2 people · guide, gear and insurance included"
+pt = "por pessoa · 4 dias · mín. 2 pessoas · guia, material e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "4 days", pt = "4 dias" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Beginner", pt = "Iniciação" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "16 years", pt = "16 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "Min. 2 · max. 8", pt = "Mín. 2 · máx. 8" }
+
+[[facts]]
+label = { en = "Crags", pt = "Falésias" }
+value = { en = "Chosen by the weather", pt = "Escolhidas pelo tempo" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "curso-escalada.jpg"
+alt = { en = "Climber in a helmet clipping the rope into a quickdraw while leading", pt = "Escalador de capacete a passar a corda numa express enquanto escala à frente" }
+credit = "Stock photo: Luis Andrés Villalón Vega / Unsplash"
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "The step from trying climbing to being a climber. Over four days on the crags around Lisbon you learn everything you need to climb outdoors with a partner, without a guide."
+pt = "O passo entre experimentar a escalada e ser escalador. Em quatro dias nas falésias à volta de Lisboa aprendes tudo o que precisas para escalar na rocha com um parceiro, sem guia."
+
+[[about]]
+en = "We start with movement, knots and belaying on top-rope, then move on to lead climbing: clipping quickdraws, falling safely, lowering off and cleaning the anchor at the top. Each day builds on the one before, with lots of time on the rock."
+pt = "Começamos pelo movimento, pelos nós e por segurar em top-rope, e passamos depois à escalada à frente: passar a corda nas expresses, cair em segurança, descer e desmontar a reunião no topo. Cada dia constrói sobre o anterior, com muito tempo na rocha."
+
+[[about]]
+en = "Each day takes place at a different crag in Arrábida, Sesimbra, Cascais or Sintra, chosen for the weather and the group, so you also get to know the best climbing near Lisbon."
+pt = "Cada dia decorre numa falésia diferente na Arrábida, em Sesimbra, em Cascais ou em Sintra, escolhida conforme o tempo e o grupo, para ficares também a conhecer a melhor escalada perto de Lisboa."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide and instructor on all 4 days"
+pt = "Guia e instrutor nos 4 dias"
+
+[[included]]
+en = "Harness, helmet and climbing shoes in all sizes"
+pt = "Arnês, capacete e sapatilhas de escalada em todos os tamanhos"
+
+[[included]]
+en = "Ropes, belay devices and chalk"
+pt = "Cordas, aparelhos de segurança e magnésio"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€250"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€260"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€230"
+
+[[prices]]
+label = { en = "Transfer from Lisbon", pt = "Transfer desde Lisboa" }
+price = "+€40"
+
+# Note under the price table
+[price_table_note]
+en = "The course runs with a minimum of 2 people: it is not available for one person on their own. Prices are per person for the full 4 days. Ask us for the next dates; crags change with the weather."
+pt = "O curso só se realiza com um mínimo de 2 pessoas: não está disponível para uma pessoa sozinha. Os preços são por pessoa para os 4 dias. Pede-nos as próximas datas; as falésias mudam conforme o tempo."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Day 1 · Basics", pt = "Dia 1 · Bases" }
+text = { en = "Gear, knots, belaying and climbing movement on top-rope.", pt = "Material, nós, segurar e movimento em top-rope." }
+
+[[plan]]
+step = { en = "Day 2 · Technique", pt = "Dia 2 · Técnica" }
+text = { en = "Footwork, reading routes and first steps leading.", pt = "Trabalho de pés, leitura de vias e primeiros passos à frente." }
+
+[[plan]]
+step = { en = "Day 3 · Leading", pt = "Dia 3 · Escalar à frente" }
+text = { en = "Clipping, falling practice and belaying a leader.", pt = "Passar a corda, treino de quedas e segurar quem vai à frente." }
+
+[[plan]]
+step = { en = "Day 4 · On your own", pt = "Dia 4 · Com autonomia" }
+text = { en = "Cleaning anchors, lowering off and climbing in pairs, with the guide watching.", pt = "Desmontar reuniões, descer e escalar a pares, com o guia a acompanhar." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trainers for the walk in (climbing shoes are provided).", pt = "ténis para a caminhada (as sapatilhas de escalada são nossas)." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable sports clothing and a warm layer.", pt = "desportiva e confortável, e um agasalho." }
+
+[[bring]]
+item = { en = "Food:", pt = "Comida:" }
+text = { en = "lunch, snacks and 1.5 L of water each day.", pt = "almoço, snacks e 1,5 L de água por dia." }
+
+[[bring]]
+item = { en = "Sun:", pt = "Sol:" }
+text = { en = "sunscreen, sunglasses and a cap.", pt = "protector solar, óculos de sol e boné." }

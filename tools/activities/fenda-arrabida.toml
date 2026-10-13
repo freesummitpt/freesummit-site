@@ -1,0 +1,165 @@
+# Activity page: Rock climbing at Fenda da Arrábida
+# Builds the page freesummitpt.com/fenda-arrabida/  (the web address comes from this file's name).
+# Each text has an English (en) and a Portuguese (pt) version.
+# After editing, run:  python tools/build_pages.py
+
+# Position in the "More activities" buttons on the other pages
+order = 2
+# Activity pre-selected in the booking form. Must match a value in _shared.toml
+form_value = "Rock climbing at Fenda da Arrábida"
+
+# Browser tab title and the description shown by Google / when shared
+title = "Rock climbing in Arrábida · Free Summit"
+description = "Guided rock climbing at the Fenda da Arrábida, above Portinho da Arrábida. Beginners and experienced climbers. Guide, climbing shoes, all gear and insurance included. From €50 per person."
+
+# Small line above the big heading
+place = "Arrábida"
+# Big price in the hero
+price = "€50"
+# Button text when this activity is listed under "More activities" on other pages
+link = { en = "Rock climbing in Arrábida", pt = "Escalada na Arrábida" }
+
+# Big heading
+[heading]
+en = "Rock climbing at the Fenda"
+pt = "Escalada na Fenda"
+
+# Text under the heading
+[intro]
+en = "Orange limestone above the turquoise water of Portinho da Arrábida. Easy routes for your first time on rock, steep walls if you already climb."
+pt = "Calcário laranja sobre a água turquesa do Portinho da Arrábida. Vias fáceis para a tua primeira vez na rocha, paredes verticais para quem já escala."
+
+# Small text next to the big price
+[price_note]
+en = "per person · guide, gear and insurance included"
+pt = "por pessoa · guia, material e seguro incluídos"
+
+# --- Key facts strip (one [[facts]] block per fact) ---
+[[facts]]
+label = { en = "Duration", pt = "Duração" }
+value = { en = "4 hours", pt = "4 horas" }
+
+[[facts]]
+label = { en = "Level", pt = "Nível" }
+value = { en = "Beginner to experienced", pt = "Iniciação a experiente" }
+
+[[facts]]
+label = { en = "Min. age", pt = "Idade mín." }
+value = { en = "10 years", pt = "10 anos" }
+
+[[facts]]
+label = { en = "Group", pt = "Grupo" }
+value = { en = "2 to 8", pt = "2 a 8" }
+
+[[facts]]
+label = { en = "Approach", pt = "Aproximação" }
+value = { en = "15 min", pt = "15 min" }
+
+# Big photo under the facts strip. File lives in assets/photos/. Replace it with your own photo (same name, ~1600 px wide JPG < 300 KB).
+# credit: remove the line when it is your own photo.
+[photo]
+file = "fenda-arrabida.jpg"
+alt = { en = "Climber on a rope under an orange limestone overhang", pt = "Escalador na corda debaixo de um tecto de calcário laranja" }
+credit = "Stock photo: Devon dennis / Unsplash"
+
+# --- "The activity": one [[about]] block per paragraph ---
+[[about]]
+en = "A half day of climbing at the Fenda da Arrábida, a protected geological monument that runs for about 700 m along the south face of the Serra da Arrábida, right above Portinho and Creiro beach."
+pt = "Um meio-dia de escalada na Fenda da Arrábida, um monumento geológico protegido que se estende por cerca de 700 m pela encosta sul da Serra da Arrábida, mesmo por cima do Portinho e da praia do Creiro."
+
+[[about]]
+en = "It is one of the best-known crags in Portugal: orange limestone full of pockets and tufas, with the clear water of the Arrábida coast below. The older sector has easy routes for first-timers; the main walls give experienced climbers steep, pocketed lines up to 30 m."
+pt = "É uma das falésias mais conhecidas do país: calcário laranja cheio de buracos e estalactites, com a água transparente da costa da Arrábida lá em baixo. O sector mais antigo tem vias fáceis para quem começa; as paredes principais dão a quem já escala vias verticais e com buracos até 30 m."
+
+[[about]]
+en = "You climb on top-rope, with the guide setting every anchor and checking every belay. No experience needed, just be comfortable on a steep 15-minute path down to the rock."
+pt = "Escalas em top-rope, com o guia a montar todas as ancoragens e a verificar cada segurança. Não precisas de experiência, só de estar à vontade num trilho inclinado de 15 minutos até à rocha."
+
+# --- "Included" list ---
+[[included]]
+en = "Guide with you the whole time"
+pt = "Guia sempre contigo"
+
+[[included]]
+en = "Harness, helmet and climbing shoes in all sizes"
+pt = "Arnês, capacete e sapatilhas de escalada em todos os tamanhos"
+
+[[included]]
+en = "Ropes, belay devices and chalk"
+pt = "Cordas, aparelhos de segurança e magnésio"
+
+[[included]]
+en = "Activity insurance"
+pt = "Seguro de actividade"
+
+# --- Price table. price can be plain text ("€45") or { en = ..., pt = ... } ---
+[[prices]]
+label = { en = "Shared group", pt = "Grupo partilhado" }
+price = "€50"
+
+[[prices]]
+label = { en = "Private, 2 people (each)", pt = "Privado, 2 pessoas (cada)" }
+price = "€55"
+
+[[prices]]
+label = { en = "Private, each extra person", pt = "Privado, cada pessoa a mais" }
+price = "€45"
+
+[[prices]]
+label = { en = "Full day, 6 h (shared)", pt = "Dia inteiro, 6 h (partilhado)" }
+price = "€90"
+
+[[prices]]
+label = { en = "Solo private (total)", pt = "Privado, 1 pessoa (total)" }
+price = "€115"
+
+[[prices]]
+label = { en = "Transfer from Lisbon, round trip", pt = "Transfer desde Lisboa, ida e volta" }
+price = "+€30"
+
+# Note under the price table
+[price_table_note]
+en = "Minimum 2 participants per departure. In summer the road to Portinho closes during the day, so we start early."
+pt = "Mínimo de 2 participantes por saída. No verão a estrada para o Portinho fecha durante o dia, por isso começamos cedo."
+
+# --- "The plan" timeline ---
+[[plan]]
+step = { en = "Meet", pt = "Encontro" }
+text = { en = "Welcome, gear fitting and safety briefing at the parking above Portinho.", pt = "Boas-vindas, ajuste do material e briefing no parque por cima do Portinho." }
+
+[[plan]]
+step = { en = "Down to the crag", pt = "Descida à falésia" }
+text = { en = "About 15 minutes on a steep path to the rock.", pt = "Cerca de 15 minutos por um trilho inclinado até à rocha." }
+
+[[plan]]
+step = { en = "Skills", pt = "Técnica" }
+text = { en = "Knots, belaying and climbing calls. The guide checks every belay.", pt = "Nós, segurar e comandos de escalada. O guia verifica cada segurança." }
+
+[[plan]]
+step = { en = "Climb", pt = "Escalar" }
+text = { en = "Routes of rising difficulty, taking turns climbing and belaying.", pt = "Vias de dificuldade crescente, à vez a escalar e a segurar." }
+
+[[plan]]
+step = { en = "Finish", pt = "Fim" }
+text = { en = "Pack up, walk back and debrief.", pt = "Arrumar, regresso e conversa final." }
+
+# --- "What to bring" ---
+[[bring]]
+item = { en = "Shoes:", pt = "Calçado:" }
+text = { en = "trainers for the steep path, not sandals (climbing shoes are provided).", pt = "ténis para o trilho inclinado, nada de sandálias (as sapatilhas de escalada são nossas)." }
+
+[[bring]]
+item = { en = "Clothes:", pt = "Roupa:" }
+text = { en = "comfortable sports clothing that lets you move freely.", pt = "desportiva e confortável, que te deixe mexer à vontade." }
+
+[[bring]]
+item = { en = "Water:", pt = "Água:" }
+text = { en = "1 to 1.5 L and a snack.", pt = "1 a 1,5 L e um snack." }
+
+[[bring]]
+item = { en = "Sun:", pt = "Sol:" }
+text = { en = "sunscreen, sunglasses and a cap. The wall faces south.", pt = "protector solar, óculos de sol e boné. A parede está virada a sul." }
+
+[[bring]]
+item = { en = "Backpack:", pt = "Mochila:" }
+text = { en = "a small one.", pt = "uma pequena." }
