@@ -60,7 +60,7 @@ value = { en = "Under 5 min", pt = "Menos de 5 min" }
 [photo]
 file = "guia.jpg"
 alt = { en = "Climber on a top-rope route on a grey rock face", pt = "Escalador numa via em top-rope numa parede de rocha cinzenta" }
-credit = "Stock photo: Connor Moynihan / Unsplash"
+credit = "Photo: Lourenço Sousa"
 
 # --- "The activity": one [[about]] block per paragraph ---
 [[about]]
