@@ -33,7 +33,7 @@ and the booking is confirmed when the client replies to accept.</p>
 <p>Machine-readable: <a href="booking.json">OpenAPI description</a> &middot; <a href="../llms.txt">llms.txt</a></p>
 
 <h2 class="xb">Endpoint</h2>
-<p><code>POST https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec</code></p>
+<p><code>POST https://script.google.com/macros/s/AKfycbwX_dAzpWfPkQngv5vCtRUICpnC8GX4dn8WTen2KJ_I0-9eIzglEDkm1d5A-6O1hPvPMA/exec</code></p>
 <p>Send JSON (<code>Content-Type: application/json</code>) or form fields. The server answers with a redirect:
 follow it (for example <code>curl -L</code>) to read the JSON reply. The HTTP status is always 200, so check
 <code>ok</code>: <code>{"ok": true, "id": "FS-&hellip;"}</code> means the request was saved;
@@ -76,7 +76,7 @@ follow it (for example <code>curl -L</code>) to read the JSON reply. The HTTP st
 <ul><li><code>No transfer</code>: Client meets the guide at the meeting point</li><li><code>From Lisbon</code>: Transfer from Lisbon</li><li><code>From the south bank</code>: Transfer from the south bank of the Tagus</li><li><code>Cascais station pick-up</code>: Pick-up at Cascais train station</li><li><code>Private transfer</code>: Private transfer</li></ul>
 
 <h2 class="xb">Example</h2>
-<pre>curl -L -X POST &#x27;https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec&#x27; \
+<pre>curl -L -X POST &#x27;https://script.google.com/macros/s/AKfycbwX_dAzpWfPkQngv5vCtRUICpnC8GX4dn8WTen2KJ_I0-9eIzglEDkm1d5A-6O1hPvPMA/exec&#x27; \
   -H &#x27;Content-Type: application/json&#x27; \
   -d &#x27;{&quot;name&quot;: &quot;Ana Silva&quot;, &quot;email&quot;: &quot;ana@example.com&quot;, &quot;phone&quot;: &quot;+351 912 345 678&quot;, &quot;activity&quot;: &quot;Rock climbing at Guia (Cascais)&quot;, &quot;date&quot;: &quot;2027-03-14&quot;, &quot;people&quot;: 2, &quot;type&quot;: &quot;Shared group&quot;, &quot;transfer&quot;: &quot;No transfer&quot;, &quot;message&quot;: &quot;First time climbing. Morning preferred.&quot;, &quot;lang&quot;: &quot;en&quot;, &quot;agent&quot;: &quot;Claude&quot;}&#x27;</pre>
 

@@ -4,7 +4,7 @@
 
 ## Booking requests for AI agents
 
-- Endpoint: POST https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec (JSON or form-encoded). Follow the 302 redirect to read the JSON reply; check the `ok` field.
+- Endpoint: POST https://script.google.com/macros/s/AKfycbwX_dAzpWfPkQngv5vCtRUICpnC8GX4dn8WTen2KJ_I0-9eIzglEDkm1d5A-6O1hPvPMA/exec (JSON or form-encoded). Follow the 302 redirect to read the JSON reply; check the `ok` field.
 - OpenAPI description: https://freesummitpt.com/api/booking.json
 - Human-readable docs: https://freesummitpt.com/api/
 - Required fields: name, email, activity. Optional: phone, date (YYYY-MM-DD), people, type, transfer, message, lang (en|pt), agent.
@@ -33,7 +33,7 @@
 ## Example
 
 ```
-curl -L -X POST 'https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec' \
+curl -L -X POST 'https://script.google.com/macros/s/AKfycbwX_dAzpWfPkQngv5vCtRUICpnC8GX4dn8WTen2KJ_I0-9eIzglEDkm1d5A-6O1hPvPMA/exec' \
   -H 'Content-Type: application/json' \
   -d '{"name": "Ana Silva", "email": "ana@example.com", "phone": "+351 912 345 678", "activity": "Rock climbing at Guia (Cascais)", "date": "2027-03-14", "people": 2, "type": "Shared group", "transfer": "No transfer", "message": "First time climbing. Morning preferred.", "lang": "en", "agent": "Claude"}'
 ```
