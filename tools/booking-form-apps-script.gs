@@ -104,8 +104,8 @@ function doPost(e) {
     id: id,
     status: 'received',
     message: 'Request received. Free Summit will reply to ' + (clean.email || 'the client') +
-             ' within 24 hours with availability. The booking is confirmed once the client pays a EUR 15 ' +
-             'booking fee, which is deducted from the final price.'
+             ' within 24 hours with availability and the price. The booking is confirmed when the client ' +
+             'replies to accept.'
   });
 }
 

@@ -3,7 +3,7 @@
   "info": {
     "title": "Free Summit booking requests",
     "version": "1.0.0",
-    "description": "Send a booking request for a guided outdoor activity near Lisbon (rock climbing, via ferrata, hiking) on behalf of a client, without filling in the website form. This creates a REQUEST, not a confirmed booking: Free Summit replies to the client's email within 24 hours with availability. The booking is confirmed when the client pays a EUR 15 booking fee, deducted from the final price. Human-readable docs: https://freesummitpt.com/api/",
+    "description": "Send a booking request for a guided outdoor activity near Lisbon (rock climbing, via ferrata, hiking) on behalf of a client, without filling in the website form. This creates a REQUEST, not a confirmed booking: Free Summit replies to the client's email within 24 hours with availability and the price, and the booking is confirmed when the client replies to accept. Human-readable docs: https://freesummitpt.com/api/",
     "contact": {
       "name": "Free Summit",
       "email": "hello@freesummitpt.com",

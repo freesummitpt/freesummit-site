@@ -8,7 +8,7 @@
 - OpenAPI description: https://freesummitpt.com/api/booking.json
 - Human-readable docs: https://freesummitpt.com/api/
 - Required fields: name, email, activity. Optional: phone, date (YYYY-MM-DD), people, type, transfer, message, lang (en|pt), agent.
-- This is a request, not a confirmed booking. Tell the client that Free Summit replies by email within 24 hours, and the booking is confirmed by paying a EUR 15 fee that is deducted from the final price.
+- This is a request, not a confirmed booking. Tell the client that Free Summit replies by email within 24 hours with availability and the price, and the booking is confirmed when the client replies to accept.
 - Only send a request the client has asked for, with their real contact details.
 
 ## Activities (use the exact value in the `activity` field)

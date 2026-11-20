@@ -57,7 +57,7 @@ The homepage `index.html` is hand-written.
   max 5 per email per hour) and returns `{ok, id, message}` or `{ok:false, errors}`. API rows get Page = `api` or `api: <agent>`.
   Website-form requests (form fields with `source`) are never rejected, because the no-cors form cannot show script errors.
 - API docs page is English only (audience: developers and agents), an agreed exception to the bilingual rule.
-- The API creates a REQUEST, not a booking: confirmation still needs Lourenço's reply and the €15 booking fee.
+- The API creates a REQUEST, not a booking: confirmation still needs Lourenço's reply and the client's acceptance.
 
 ## Source content
 **Source of truth = Google Sheets** in admin@freesummitpt.com's Drive: **Lista de actividades** (activities, ages, levels, group sizes,

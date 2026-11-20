@@ -204,8 +204,8 @@ def build_api(shared, pages):
             "description": (
                 "Send a booking request for a guided outdoor activity near Lisbon (rock climbing, via ferrata, hiking) "
                 "on behalf of a client, without filling in the website form. This creates a REQUEST, not a confirmed "
-                "booking: Free Summit replies to the client's email within 24 hours with availability. The booking is "
-                "confirmed when the client pays a EUR 15 booking fee, deducted from the final price. "
+                "booking: Free Summit replies to the client's email within 24 hours with availability and the price, "
+                "and the booking is confirmed when the client replies to accept. "
                 f"Human-readable docs: {SITE}/api/"),
             "contact": {"name": "Free Summit", "email": "hello@freesummitpt.com", "url": SITE},
         },
@@ -265,8 +265,8 @@ def build_api(shared, pages):
         f"- OpenAPI description: {SITE}/api/booking.json",
         f"- Human-readable docs: {SITE}/api/",
         "- Required fields: name, email, activity. Optional: phone, date (YYYY-MM-DD), people, type, transfer, message, lang (en|pt), agent.",
-        "- This is a request, not a confirmed booking. Tell the client that Free Summit replies by email within 24 hours, "
-        "and the booking is confirmed by paying a EUR 15 fee that is deducted from the final price.",
+        "- This is a request, not a confirmed booking. Tell the client that Free Summit replies by email within 24 hours "
+        "with availability and the price, and the booking is confirmed when the client replies to accept.",
         "- Only send a request the client has asked for, with their real contact details.",
         "",
         "## Activities (use the exact value in the `activity` field)",
@@ -338,8 +338,8 @@ API_PAGE = """<!doctype html>
 <main class="wrap api">
 <h1 class="xb">Booking API</h1>
 <p>AI agents and apps can send a booking request straight to Free Summit, without filling in the website form.
-A request is not a confirmed booking: we reply to the client by email within 24 hours with availability, and the booking
-is confirmed when the client pays a &euro;15 booking fee, which is deducted from the final price.</p>
+A request is not a confirmed booking: we reply to the client by email within 24 hours with availability and the price,
+and the booking is confirmed when the client replies to accept.</p>
 <p>Machine-readable: <a href="booking.json">OpenAPI description</a> &middot; <a href="../llms.txt">llms.txt</a></p>
 
 <h2 class="xb">Endpoint</h2>
