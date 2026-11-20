@@ -60,6 +60,20 @@ The homepage `index.html` is hand-written.
 - API docs page is English only (audience: developers and agents), an agreed exception to the bilingual rule.
 - The API creates a REQUEST, not a booking: confirmation still needs Lourenço's reply and the client's acceptance.
 
+## Checklist: adding, renaming or removing an activity
+The activity list lives in several places. When Lourenço adds or changes an activity, check ALL of them:
+1. `tools/activities/_shared.toml` → `[[form_options]]`: the `value` is what lands in the sheet and what agents must send. Keep existing values stable.
+2. `tools/activities/<slug>.toml` for the activity page (if it has one); its `form_value` must match a `form_options` value exactly.
+3. `index.html` (hand-written homepage): the `<option>` list in the booking form (`#f-activity`), plus the activity listing / `data-select` links.
+4. Run `python tools/build_pages.py`. It rebuilds the activity pages AND the booking API files: `api/booking.json`, `api/index.html`, `llms.txt`.
+5. Commit and push. Then verify the live list: https://freesummitpt.com/api/booking.json → `paths` → `/exec` → `post` → `requestBody` →
+   `content` → `application/json` → `schema` → `properties` → `activity` → `enum`.
+   **This `enum` is what the Apps Script reads to validate API requests** (also `type.enum` and `transfer.enum`), cached up to 1 hour.
+   The script itself needs NO change. Self-check: open `<formEndpoint>?check=1` — it answers with the number of activities it read.
+6. Booking type or transfer options changed? Update `[[type_options]]`/`[[transfer_options]]` in `_shared.toml` AND the form markup in
+   `index.html` and `_template.html` (those choices are hard-coded there).
+7. Prices for the "from €xx" in the API docs come from the activity `.toml` `price`; check them against the Activity Pricing sheet.
+
 ## Source content
 **Source of truth = Google Sheets** in admin@freesummitpt.com's Drive: **Lista de actividades** (activities, ages, levels, group sizes,
 routes, included, notes) and **Free Summit – Activity Pricing** (prices). When they disagree with the Drive docs or the site, the sheets win.
