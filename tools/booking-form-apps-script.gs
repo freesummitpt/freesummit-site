@@ -26,38 +26,17 @@ const SHEET_NAME = 'Requests';   // the tab in the Booking Requests sheet where 
 const SITE = 'https://freesummitpt.com';
 const SPEC_URL = SITE + '/api/booking.json';
 const FIELDS = ['name', 'email', 'phone', 'activity', 'date', 'people', 'type', 'transfer', 'message', 'lang', 'source'];
-// BEGIN BUILT-IN OPTIONS (written by tools/build_pages.py, do not edit by hand)
-const BUILT_IN_OPTIONS = {
-  "activity": [
-    "Rock climbing at Guia (Cascais)",
-    "Rock climbing at Fenda da Arrábida",
-    "Rock climbing at Forte do Cavalo (Sesimbra)",
-    "Via Ferrata dos Pinheirinhos (Sesimbra)",
-    "Full day in Sesimbra (combo)",
-    "Arrábida hiking tour",
-    "Cabo da Roca hiking tour",
-    "Sintra hiking tour",
-    "Climbing course: Introduction to sport climbing",
-    "Climbing course: Multipitch",
-    "Not sure yet"
-  ],
-  "type": [
-    "Shared group",
-    "Private"
-  ],
-  "transfer": [
-    "No transfer",
-    "From Lisbon",
-    "From the south bank",
-    "Cascais station pick-up",
-    "Private transfer"
-  ]
-};
-// END BUILT-IN OPTIONS
 const MAX_PER_EMAIL_PER_HOUR = 5;   // API only: stops an agent stuck in a loop from flooding the sheet
 
-/** Opening the URL in a browser (GET): short info for agents. */
-function doGet() {
+/** Opening the URL in a browser (GET): short info for agents.
+ *  Add ?check=1 to the URL to see whether the script can read the activity list from the website. */
+function doGet(e) {
+  if (e && e.parameter && e.parameter.check) {
+    CacheService.getScriptCache().remove('options');
+    const r = fetchOptions_();
+    return json_(r.error ? { ok: false, check: 'activity list', error: r.error }
+                         : { ok: true, check: 'activity list', activities: r.opts.activity.length });
+  }
   return json_({
     ok: true,
     service: 'Free Summit booking requests',
@@ -95,6 +74,9 @@ function doPost(e) {
     clean.transfer = clean.transfer || 'No transfer';
     clean.people = clean.people || '2';
     clean.lang = clean.lang || 'en';
+    if (clean._unchecked) {
+      clean.message = '⚠ Activity, type and transfer not checked (website list unreachable). ' + (clean.message || '');
+    }
   }
   // Website requests are never rejected here: the browser cannot show an error from this script,
   // so a rejected request would be a lost client. The form checks name, email and activity itself.
@@ -123,7 +105,7 @@ function doPost(e) {
   MailApp.sendEmail({
     to: NOTIFY_EMAIL,
     replyTo: clean.email || NOTIFY_EMAIL,
-    subject: (fromWebsite ? 'Novo pedido: ' : 'Novo pedido (API): ') + (clean.activity || 'actividade') + ' – ' + (clean.name || ''),
+    subject: (fromWebsite ? 'Novo pedido: ' : (clean._unchecked ? '⚠ Novo pedido (API, não verificado): ' : 'Novo pedido (API): ')) + (clean.activity || 'actividade') + ' – ' + (clean.name || ''),
     body: 'Ref: ' + id + '\n' + lines.join('\n') + '\n\nVer todos os pedidos: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl()
   });
 
@@ -145,10 +127,11 @@ function validate_(p) {
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)) add('email', 'Not a valid email address.');
 
   const opts = options_();
-  if (!p.activity) add('activity', 'Required. One of: ' + (opts.activity || []).join(' | '));
-  else if (opts.activity && opts.activity.indexOf(p.activity) < 0) add('activity', 'Unknown activity. Use one of: ' + opts.activity.join(' | '));
-  if (p.type && opts.type && opts.type.indexOf(p.type) < 0) add('type', 'Use one of: ' + opts.type.join(' | '));
-  if (p.transfer && opts.transfer && opts.transfer.indexOf(p.transfer) < 0) add('transfer', 'Use one of: ' + opts.transfer.join(' | '));
+  p._unchecked = !opts;
+  if (!p.activity) add('activity', 'Required.' + (opts ? ' One of: ' + opts.activity.join(' | ') : ' See ' + SITE + '/api/'));
+  else if (opts && opts.activity.indexOf(p.activity) < 0) add('activity', 'Unknown activity. Use one of: ' + opts.activity.join(' | '));
+  if (opts && p.type && opts.type.indexOf(p.type) < 0) add('type', 'Use one of: ' + opts.type.join(' | '));
+  if (opts && p.transfer && opts.transfer.indexOf(p.transfer) < 0) add('transfer', 'Use one of: ' + opts.transfer.join(' | '));
 
   if (p.date) {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(p.date);
@@ -162,23 +145,30 @@ function validate_(p) {
   return errors;
 }
 
-/** Allowed values: read from the website's API description (cached 1 hour), so new activities work
- *  without updating this script. If the website can't be read, the built-in list below is used. */
+/** Allowed values, read from the website's API description, so the list is always the one on the
+ *  website and this script never needs updating when activities change. Cached for 1 hour. */
 function options_() {
   const cache = CacheService.getScriptCache();
   const hit = cache.get('options');
   if (hit) return JSON.parse(hit);
+  const r = fetchOptions_();
+  if (r.error) {
+    console.error('Could not read the activity list from ' + SPEC_URL + ': ' + r.error);
+    return null; // unknown: the request is accepted but flagged for you to check
+  }
+  cache.put('options', JSON.stringify(r.opts), 3600);
+  return r.opts;
+}
+
+function fetchOptions_() {
   try {
     const res = UrlFetchApp.fetch(SPEC_URL, { muteHttpExceptions: true, followRedirects: true });
-    if (res.getResponseCode() !== 200) throw new Error('HTTP ' + res.getResponseCode());
+    if (res.getResponseCode() !== 200) return { error: 'HTTP ' + res.getResponseCode() + ' from ' + SPEC_URL };
     const spec = JSON.parse(res.getContentText());
     const props = spec.paths[Object.keys(spec.paths)[0]].post.requestBody.content['application/json'].schema.properties;
-    const opts = { activity: props.activity.enum, type: props.type.enum, transfer: props.transfer.enum };
-    cache.put('options', JSON.stringify(opts), 3600);
-    return opts;
+    return { opts: { activity: props.activity.enum, type: props.type.enum, transfer: props.transfer.enum } };
   } catch (err) {
-    console.error('Could not read the activity list from ' + SPEC_URL + ', using the built-in list: ' + err);
-    return BUILT_IN_OPTIONS;
+    return { error: String(err && err.message || err) };
   }
 }
 
