@@ -95,7 +95,9 @@ function doPost(e) {
                        'Type', 'Transfer', 'Message', 'Language', 'Page', 'Status']);
       sheet.setFrozenRows(1);
     }
-    const row = [new Date()].concat(FIELDS.map(f => clean[f] || ''), ['New']);
+    // A leading ' makes Sheets store text as typed: without it "+351 ..." is read as a formula (#ERROR!)
+    const cell = v => /^[=+\-@]/.test(v) ? "'" + v : v;
+    const row = [new Date()].concat(FIELDS.map(f => cell(clean[f] || '')), ['New']);
     sheet.appendRow(row);
   } finally {
     lock.releaseLock();
