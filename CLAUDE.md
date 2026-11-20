@@ -72,7 +72,14 @@ The activity list lives in several places. When Lourenço adds or changes an act
    The script itself needs NO change. Self-check: open `<formEndpoint>?check=1` — it answers with the number of activities it read.
 6. Booking type or transfer options changed? Update `[[type_options]]`/`[[transfer_options]]` in `_shared.toml` AND the form markup in
    `index.html` and `_template.html` (those choices are hard-coded there).
-7. Prices for the "from €xx" in the API docs come from the activity `.toml` `price`; check them against the Activity Pricing sheet.
+7. **Price check against the Google Sheet "Free Summit – Activity Pricing"** (admin@freesummitpt.com's Drive, the source of truth
+   for prices — NOT the Pricing & Market Study doc). Read the sheet and compare, for the new/changed activity AND any others touched:
+   - the activity `.toml`: hero `price`, every `[[prices]]` row (shared, private 2 people, each extra person, full day, solo private,
+     transfers) and any price in `description`;
+   - `index.html`: the "from €xx" shown for that activity/location on the homepage;
+   - after rebuilding: the "from" price per activity in `api/booking.json` / `llms.txt` (taken from the `.toml` `price`).
+   If the sheet has no price yet, the page shows "On request / Sob consulta" rather than a guessed price.
+   Report any difference to Lourenço; the sheet wins.
 
 ## Source content
 **Source of truth = Google Sheets** in admin@freesummitpt.com's Drive: **Lista de actividades** (activities, ages, levels, group sizes,
