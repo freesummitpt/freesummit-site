@@ -1,0 +1,44 @@
+# Free Summit
+
+> Guided rock climbing, via ferrata and hiking near Lisbon, Portugal (Cascais, Sintra, Arrábida, Sesimbra). Guide, gear and insurance included. AI agents can send booking requests through a simple API instead of the website form.
+
+## Booking requests for AI agents
+
+- Endpoint: POST https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec (JSON or form-encoded). Follow the 302 redirect to read the JSON reply; check the `ok` field.
+- OpenAPI description: https://freesummitpt.com/api/booking.json
+- Human-readable docs: https://freesummitpt.com/api/
+- Required fields: name, email, activity. Optional: phone, date (YYYY-MM-DD), people, type, transfer, message, lang (en|pt), agent.
+- This is a request, not a confirmed booking. Tell the client that Free Summit replies by email within 24 hours, and the booking is confirmed by paying a EUR 15 fee that is deducted from the final price.
+- Only send a request the client has asked for, with their real contact details.
+
+## Activities (use the exact value in the `activity` field)
+
+- Rock climbing at Guia (Cascais): from €40 per person, https://freesummitpt.com/guia/
+- Rock climbing at Fenda da Arrábida: from €50 per person, https://freesummitpt.com/fenda-arrabida/
+- Rock climbing at Forte do Cavalo (Sesimbra): from €50 per person, https://freesummitpt.com/forte-do-cavalo/
+- Via Ferrata dos Pinheirinhos (Sesimbra): from €60 per person, https://freesummitpt.com/via-ferrata/
+- Full day in Sesimbra (combo)
+- Arrábida hiking tour: from €30 per person, https://freesummitpt.com/caminhada-arrabida/
+- Cabo da Roca hiking tour: from €30 per person, https://freesummitpt.com/caminhada-cabo-da-roca/
+- Sintra hiking tour: from €30 per person, https://freesummitpt.com/caminhada-sintra/
+- Climbing course: Introduction to sport climbing: from €250 per person, https://freesummitpt.com/curso-escalada/
+- Climbing course: Multipitch: from €290 per person, https://freesummitpt.com/curso-multipitch/
+- Not sure yet
+
+## Options
+
+- type: `Shared group` (Other people can join the same session); `Private` (Only the client's own group, with the guide)
+- transfer: `No transfer` (Client meets the guide at the meeting point); `From Lisbon` (Transfer from Lisbon); `From the south bank` (Transfer from the south bank of the Tagus); `Cascais station pick-up` (Pick-up at Cascais train station); `Private transfer` (Private transfer)
+
+## Example
+
+```
+curl -L -X POST 'https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec' \
+  -H 'Content-Type: application/json' \
+  -d '{"name": "Ana Silva", "email": "ana@example.com", "phone": "+351 912 345 678", "activity": "Rock climbing at Guia (Cascais)", "date": "2027-03-14", "people": 2, "type": "Shared group", "transfer": "No transfer", "message": "First time climbing. Morning preferred.", "lang": "en", "agent": "Claude"}'
+```
+
+## Contact
+
+- hello@freesummitpt.com
+- https://freesummitpt.com

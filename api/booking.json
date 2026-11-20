@@ -1,0 +1,344 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Free Summit booking requests",
+    "version": "1.0.0",
+    "description": "Send a booking request for a guided outdoor activity near Lisbon (rock climbing, via ferrata, hiking) on behalf of a client, without filling in the website form. This creates a REQUEST, not a confirmed booking: Free Summit replies to the client's email within 24 hours with availability. The booking is confirmed when the client pays a EUR 15 booking fee, deducted from the final price. Human-readable docs: https://freesummitpt.com/api/",
+    "contact": {
+      "name": "Free Summit",
+      "email": "hello@freesummitpt.com",
+      "url": "https://freesummitpt.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA"
+    }
+  ],
+  "paths": {
+    "/exec": {
+      "get": {
+        "operationId": "getBookingInfo",
+        "summary": "Check the service is up and get the link to this description.",
+        "responses": {
+          "200": {
+            "description": "Service info",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createBookingRequest",
+        "summary": "Send a booking request for one activity.",
+        "description": "Google Apps Script answers with an HTTP 302 redirect; follow it with a GET (curl -L does) to read the JSON result. The HTTP status is always 200: check the 'ok' field.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "email",
+                  "activity"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "description": "Client's full name."
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Client's email. Free Summit replies here."
+                  },
+                  "phone": {
+                    "type": "string",
+                    "maxLength": 40,
+                    "description": "Client's phone or WhatsApp, with country code. Optional."
+                  },
+                  "activity": {
+                    "type": "string",
+                    "enum": [
+                      "Rock climbing at Guia (Cascais)",
+                      "Rock climbing at Fenda da Arrábida",
+                      "Rock climbing at Forte do Cavalo (Sesimbra)",
+                      "Via Ferrata dos Pinheirinhos (Sesimbra)",
+                      "Full day in Sesimbra (combo)",
+                      "Arrábida hiking tour",
+                      "Cabo da Roca hiking tour",
+                      "Sintra hiking tour",
+                      "Climbing course: Introduction to sport climbing",
+                      "Climbing course: Multipitch",
+                      "Not sure yet"
+                    ],
+                    "description": "Exactly one of the listed values."
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Preferred date, YYYY-MM-DD, today or later. Optional."
+                  },
+                  "people": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20,
+                    "default": 2,
+                    "description": "Number of participants."
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Shared group",
+                      "Private"
+                    ],
+                    "default": "Shared group",
+                    "description": "Shared group: Other people can join the same session; Private: Only the client's own group, with the guide."
+                  },
+                  "transfer": {
+                    "type": "string",
+                    "enum": [
+                      "No transfer",
+                      "From Lisbon",
+                      "From the south bank",
+                      "Cascais station pick-up",
+                      "Private transfer"
+                    ],
+                    "default": "No transfer",
+                    "description": "Transport. No transfer: Client meets the guide at the meeting point; From Lisbon: Transfer from Lisbon; From the south bank: Transfer from the south bank of the Tagus; Cascais station pick-up: Pick-up at Cascais train station; Private transfer: Private transfer."
+                  },
+                  "message": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Anything else: experience, children's ages, morning or afternoon, questions. Optional."
+                  },
+                  "lang": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "pt"
+                    ],
+                    "default": "en",
+                    "description": "Language Free Summit should reply in."
+                  },
+                  "agent": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Name of the AI agent or app sending the request, e.g. 'Claude'. Optional but appreciated."
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "email",
+                  "activity"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "description": "Client's full name."
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Client's email. Free Summit replies here."
+                  },
+                  "phone": {
+                    "type": "string",
+                    "maxLength": 40,
+                    "description": "Client's phone or WhatsApp, with country code. Optional."
+                  },
+                  "activity": {
+                    "type": "string",
+                    "enum": [
+                      "Rock climbing at Guia (Cascais)",
+                      "Rock climbing at Fenda da Arrábida",
+                      "Rock climbing at Forte do Cavalo (Sesimbra)",
+                      "Via Ferrata dos Pinheirinhos (Sesimbra)",
+                      "Full day in Sesimbra (combo)",
+                      "Arrábida hiking tour",
+                      "Cabo da Roca hiking tour",
+                      "Sintra hiking tour",
+                      "Climbing course: Introduction to sport climbing",
+                      "Climbing course: Multipitch",
+                      "Not sure yet"
+                    ],
+                    "description": "Exactly one of the listed values."
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Preferred date, YYYY-MM-DD, today or later. Optional."
+                  },
+                  "people": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20,
+                    "default": 2,
+                    "description": "Number of participants."
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "Shared group",
+                      "Private"
+                    ],
+                    "default": "Shared group",
+                    "description": "Shared group: Other people can join the same session; Private: Only the client's own group, with the guide."
+                  },
+                  "transfer": {
+                    "type": "string",
+                    "enum": [
+                      "No transfer",
+                      "From Lisbon",
+                      "From the south bank",
+                      "Cascais station pick-up",
+                      "Private transfer"
+                    ],
+                    "default": "No transfer",
+                    "description": "Transport. No transfer: Client meets the guide at the meeting point; From Lisbon: Transfer from Lisbon; From the south bank: Transfer from the south bank of the Tagus; Cascais station pick-up: Pick-up at Cascais train station; Private transfer: Private transfer."
+                  },
+                  "message": {
+                    "type": "string",
+                    "maxLength": 2000,
+                    "description": "Anything else: experience, children's ages, morning or afternoon, questions. Optional."
+                  },
+                  "lang": {
+                    "type": "string",
+                    "enum": [
+                      "en",
+                      "pt"
+                    ],
+                    "default": "en",
+                    "description": "Language Free Summit should reply in."
+                  },
+                  "agent": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Name of the AI agent or app sending the request, e.g. 'Claude'. Optional but appreciated."
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Result. ok=true: request saved. ok=false: see errors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Reference, e.g. FS-20261121-4F2A"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "field": {
+                            "type": "string"
+                          },
+                          "message": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-activities": [
+    {
+      "value": "Rock climbing at Guia (Cascais)",
+      "page": "https://freesummitpt.com/guia/",
+      "from_price": "€40",
+      "summary": "Guided outdoor rock climbing at Guia, Cascais. No experience needed. Guide, climbing shoes, all gear and insurance included. From €40 per person."
+    },
+    {
+      "value": "Rock climbing at Fenda da Arrábida",
+      "page": "https://freesummitpt.com/fenda-arrabida/",
+      "from_price": "€50",
+      "summary": "Guided rock climbing at the Fenda da Arrábida, above Portinho da Arrábida. Beginners and experienced climbers. Guide, climbing shoes, all gear and insurance included. From €50 per person."
+    },
+    {
+      "value": "Rock climbing at Forte do Cavalo (Sesimbra)",
+      "page": "https://freesummitpt.com/forte-do-cavalo/",
+      "from_price": "€50",
+      "summary": "Guided sport climbing on the sea cliffs of Forte do Cavalo, Sesimbra. Beginners and experienced climbers. Guide, climbing shoes, all gear and insurance included. From €50 per person."
+    },
+    {
+      "value": "Via Ferrata dos Pinheirinhos (Sesimbra)",
+      "page": "https://freesummitpt.com/via-ferrata/",
+      "from_price": "€60",
+      "summary": "Guided via ferrata at Pinheirinhos, Sesimbra: 800 m along the sea cliffs of Arrábida. No climbing experience needed. Guide, gear and insurance included. From €60 per person."
+    },
+    {
+      "value": "Full day in Sesimbra (combo)",
+      "page": null,
+      "from_price": null,
+      "summary": null
+    },
+    {
+      "value": "Arrábida hiking tour",
+      "page": "https://freesummitpt.com/caminhada-arrabida/",
+      "from_price": "€30",
+      "summary": "Guided half-day hike in the Serra da Arrábida Natural Park, near Lisbon. Ridges, sea views and Mediterranean scrub. Guide and insurance included. From €30 per person."
+    },
+    {
+      "value": "Cabo da Roca hiking tour",
+      "page": "https://freesummitpt.com/caminhada-cabo-da-roca/",
+      "from_price": "€30",
+      "summary": "Guided half-day coastal hike at Cabo da Roca, the westernmost point of mainland Europe, in the Sintra-Cascais Natural Park. Guide and insurance included. From €30 per person."
+    },
+    {
+      "value": "Sintra hiking tour",
+      "page": "https://freesummitpt.com/caminhada-sintra/",
+      "from_price": "€30",
+      "summary": "Guided half-day hike in the Serra de Sintra: misty forests, granite boulders and views over the palaces and the Atlantic. Guide and insurance included. From €30 per person."
+    },
+    {
+      "value": "Climbing course: Introduction to sport climbing",
+      "page": "https://freesummitpt.com/curso-escalada/",
+      "from_price": "€250",
+      "summary": "4-day introduction to sport climbing near Lisbon, in Arrábida, Sesimbra, Cascais and Sintra. Learn to lead, belay and climb on your own safely. Minimum 2 people. Guide, gear and insurance included. From €250 per person."
+    },
+    {
+      "value": "Climbing course: Multipitch",
+      "page": "https://freesummitpt.com/curso-multipitch/",
+      "from_price": "€290",
+      "summary": "4-day multipitch climbing course in Cabo Espichel, Sintra and Santa Luzia. Build belay stations, manage the rope and abseil safely. For climbers who already lead sport routes. Minimum 2 people. From €290 per person."
+    },
+    {
+      "value": "Not sure yet",
+      "page": null,
+      "from_price": null,
+      "summary": null
+    }
+  ]
+}

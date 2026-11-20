@@ -45,3 +45,36 @@ pt = "Curso: Escalada em vias longas"
 [[form_options]]
 value = "Not sure yet"
 pt = "Ainda não sei"
+
+# --- Booking API (freesummitpt.com/api/) -------------------------------------
+# These two lists only feed the API documentation that build_pages.py writes
+# (api/index.html, api/booking.json, llms.txt). They must match the "Booking type"
+# and "Transfer" choices in the booking form (index.html and _template.html).
+
+[[type_options]]
+value = "Shared group"
+en = "Other people can join the same session"
+
+[[type_options]]
+value = "Private"
+en = "Only the client's own group, with the guide"
+
+[[transfer_options]]
+value = "No transfer"
+en = "Client meets the guide at the meeting point"
+
+[[transfer_options]]
+value = "From Lisbon"
+en = "Transfer from Lisbon"
+
+[[transfer_options]]
+value = "From the south bank"
+en = "Transfer from the south bank of the Tagus"
+
+[[transfer_options]]
+value = "Cascais station pick-up"
+en = "Pick-up at Cascais train station"
+
+[[transfer_options]]
+value = "Private transfer"
+en = "Private transfer"

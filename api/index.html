@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Booking API for AI agents · Free Summit</title>
+<meta name="description" content="Send Free Summit booking requests from an AI agent or app, without filling in the website form.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ECEEBF">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="service-desc" href="booking.json" type="application/json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  .api{padding:clamp(40px,6vw,80px) 0;max-width:860px}
+  .api h1{font-size:clamp(40px,7vw,80px);margin:0 0 24px}
+  .api h2{font-size:24px;margin:48px 0 12px}
+  .api code,.api pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px}
+  .api pre{background:var(--olive);color:var(--cream);padding:18px;border-radius:4px;overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+  .api table{width:100%;border-collapse:collapse;font-size:15px}
+  .api td,.api th{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1.5px solid var(--rule)}
+</style>
+</head>
+<body data-page="api">
+<header class="nav"><div class="wrap"><a class="mark" href="../" aria-label="Free Summit, home">FREE<br>SUMMIT</a></div></header>
+<main class="wrap api">
+<h1 class="xb">Booking API</h1>
+<p>AI agents and apps can send a booking request straight to Free Summit, without filling in the website form.
+A request is not a confirmed booking: we reply to the client by email within 24 hours with availability, and the booking
+is confirmed when the client pays a &euro;15 booking fee, which is deducted from the final price.</p>
+<p>Machine-readable: <a href="booking.json">OpenAPI description</a> &middot; <a href="../llms.txt">llms.txt</a></p>
+
+<h2 class="xb">Endpoint</h2>
+<p><code>POST https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec</code></p>
+<p>Send JSON (<code>Content-Type: application/json</code>) or form fields. The server answers with a redirect:
+follow it (for example <code>curl -L</code>) to read the JSON reply. The HTTP status is always 200, so check
+<code>ok</code>: <code>{"ok": true, "id": "FS-&hellip;"}</code> means the request was saved;
+<code>{"ok": false, "errors": [&hellip;]}</code> lists what to fix.</p>
+
+<h2 class="xb">Fields</h2>
+<table><thead><tr><th>Field</th><th>Required</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>name</code></td><td>yes</td><td>Client&#x27;s full name.</td></tr>
+<tr><td><code>email</code></td><td>yes</td><td>Client&#x27;s email. Free Summit replies here.</td></tr>
+<tr><td><code>phone</code></td><td>no</td><td>Client&#x27;s phone or WhatsApp, with country code. Optional.</td></tr>
+<tr><td><code>activity</code></td><td>yes</td><td>Exactly one of the listed values.</td></tr>
+<tr><td><code>date</code></td><td>no</td><td>Preferred date, YYYY-MM-DD, today or later. Optional.</td></tr>
+<tr><td><code>people</code></td><td>no</td><td>Number of participants.</td></tr>
+<tr><td><code>type</code></td><td>no</td><td>Shared group: Other people can join the same session; Private: Only the client&#x27;s own group, with the guide.</td></tr>
+<tr><td><code>transfer</code></td><td>no</td><td>Transport. No transfer: Client meets the guide at the meeting point; From Lisbon: Transfer from Lisbon; From the south bank: Transfer from the south bank of the Tagus; Cascais station pick-up: Pick-up at Cascais train station; Private transfer: Private transfer.</td></tr>
+<tr><td><code>message</code></td><td>no</td><td>Anything else: experience, children&#x27;s ages, morning or afternoon, questions. Optional.</td></tr>
+<tr><td><code>lang</code></td><td>no</td><td>Language Free Summit should reply in.</td></tr>
+<tr><td><code>agent</code></td><td>no</td><td>Name of the AI agent or app sending the request, e.g. &#x27;Claude&#x27;. Optional but appreciated.</td></tr>
+</tbody></table>
+
+<h2 class="xb">Activities</h2>
+<p>Use one of these values exactly in <code>activity</code>.</p>
+<ul>
+<li><code>Rock climbing at Guia (Cascais)</code> &middot; from €40 &middot; <a href="https://freesummitpt.com/guia/">page</a></li>
+<li><code>Rock climbing at Fenda da Arrábida</code> &middot; from €50 &middot; <a href="https://freesummitpt.com/fenda-arrabida/">page</a></li>
+<li><code>Rock climbing at Forte do Cavalo (Sesimbra)</code> &middot; from €50 &middot; <a href="https://freesummitpt.com/forte-do-cavalo/">page</a></li>
+<li><code>Via Ferrata dos Pinheirinhos (Sesimbra)</code> &middot; from €60 &middot; <a href="https://freesummitpt.com/via-ferrata/">page</a></li>
+<li><code>Full day in Sesimbra (combo)</code></li>
+<li><code>Arrábida hiking tour</code> &middot; from €30 &middot; <a href="https://freesummitpt.com/caminhada-arrabida/">page</a></li>
+<li><code>Cabo da Roca hiking tour</code> &middot; from €30 &middot; <a href="https://freesummitpt.com/caminhada-cabo-da-roca/">page</a></li>
+<li><code>Sintra hiking tour</code> &middot; from €30 &middot; <a href="https://freesummitpt.com/caminhada-sintra/">page</a></li>
+<li><code>Climbing course: Introduction to sport climbing</code> &middot; from €250 &middot; <a href="https://freesummitpt.com/curso-escalada/">page</a></li>
+<li><code>Climbing course: Multipitch</code> &middot; from €290 &middot; <a href="https://freesummitpt.com/curso-multipitch/">page</a></li>
+<li><code>Not sure yet</code></li>
+</ul>
+
+<h2 class="xb">Type</h2>
+<ul><li><code>Shared group</code>: Other people can join the same session</li><li><code>Private</code>: Only the client&#x27;s own group, with the guide</li></ul>
+<h2 class="xb">Transfer</h2>
+<ul><li><code>No transfer</code>: Client meets the guide at the meeting point</li><li><code>From Lisbon</code>: Transfer from Lisbon</li><li><code>From the south bank</code>: Transfer from the south bank of the Tagus</li><li><code>Cascais station pick-up</code>: Pick-up at Cascais train station</li><li><code>Private transfer</code>: Private transfer</li></ul>
+
+<h2 class="xb">Example</h2>
+<pre>curl -L -X POST &#x27;https://script.google.com/macros/s/AKfycbwAefCHXl1FXVHM0cS7LHUHku_oTzUu4inkTyhaFRAL_3VhTfrfDHnZ3qN6H7gN4_CPzA/exec&#x27; \
+  -H &#x27;Content-Type: application/json&#x27; \
+  -d &#x27;{&quot;name&quot;: &quot;Ana Silva&quot;, &quot;email&quot;: &quot;ana@example.com&quot;, &quot;phone&quot;: &quot;+351 912 345 678&quot;, &quot;activity&quot;: &quot;Rock climbing at Guia (Cascais)&quot;, &quot;date&quot;: &quot;2027-03-14&quot;, &quot;people&quot;: 2, &quot;type&quot;: &quot;Shared group&quot;, &quot;transfer&quot;: &quot;No transfer&quot;, &quot;message&quot;: &quot;First time climbing. Morning preferred.&quot;, &quot;lang&quot;: &quot;en&quot;, &quot;agent&quot;: &quot;Claude&quot;}&#x27;</pre>
+
+<h2 class="xb">Please</h2>
+<ul>
+<li>Only send a request the client asked for, with their real name and email.</li>
+<li>One request per activity and date. Put questions in <code>message</code>.</li>
+<li>Tell the client to expect an email from hello@freesummitpt.com.</li>
+</ul>
+<p>Questions: <a href="mailto:hello@freesummitpt.com">hello@freesummitpt.com</a></p>
+</main>
+</body>
+</html>
