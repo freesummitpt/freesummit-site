@@ -26,6 +26,34 @@ const SHEET_NAME = 'Requests';   // the tab in the Booking Requests sheet where 
 const SITE = 'https://freesummitpt.com';
 const SPEC_URL = SITE + '/api/booking.json';
 const FIELDS = ['name', 'email', 'phone', 'activity', 'date', 'people', 'type', 'transfer', 'message', 'lang', 'source'];
+// BEGIN BUILT-IN OPTIONS (written by tools/build_pages.py, do not edit by hand)
+const BUILT_IN_OPTIONS = {
+  "activity": [
+    "Rock climbing at Guia (Cascais)",
+    "Rock climbing at Fenda da Arrábida",
+    "Rock climbing at Forte do Cavalo (Sesimbra)",
+    "Via Ferrata dos Pinheirinhos (Sesimbra)",
+    "Full day in Sesimbra (combo)",
+    "Arrábida hiking tour",
+    "Cabo da Roca hiking tour",
+    "Sintra hiking tour",
+    "Climbing course: Introduction to sport climbing",
+    "Climbing course: Multipitch",
+    "Not sure yet"
+  ],
+  "type": [
+    "Shared group",
+    "Private"
+  ],
+  "transfer": [
+    "No transfer",
+    "From Lisbon",
+    "From the south bank",
+    "Cascais station pick-up",
+    "Private transfer"
+  ]
+};
+// END BUILT-IN OPTIONS
 const MAX_PER_EMAIL_PER_HOUR = 5;   // API only: stops an agent stuck in a loop from flooding the sheet
 
 /** Opening the URL in a browser (GET): short info for agents. */
@@ -134,20 +162,23 @@ function validate_(p) {
   return errors;
 }
 
-/** Allowed values, read from the website's API description (cached 1 hour). Never blocks if the site is unreachable. */
+/** Allowed values: read from the website's API description (cached 1 hour), so new activities work
+ *  without updating this script. If the website can't be read, the built-in list below is used. */
 function options_() {
   const cache = CacheService.getScriptCache();
   const hit = cache.get('options');
   if (hit) return JSON.parse(hit);
   try {
-    const spec = JSON.parse(UrlFetchApp.fetch(SPEC_URL, { muteHttpExceptions: true }).getContentText());
+    const res = UrlFetchApp.fetch(SPEC_URL, { muteHttpExceptions: true, followRedirects: true });
+    if (res.getResponseCode() !== 200) throw new Error('HTTP ' + res.getResponseCode());
+    const spec = JSON.parse(res.getContentText());
     const props = spec.paths[Object.keys(spec.paths)[0]].post.requestBody.content['application/json'].schema.properties;
     const opts = { activity: props.activity.enum, type: props.type.enum, transfer: props.transfer.enum };
     cache.put('options', JSON.stringify(opts), 3600);
     return opts;
   } catch (err) {
-    console.error('Could not read the activity list from ' + SPEC_URL + ': ' + err); // see Apps Script → Executions
-    return {}; // site unreachable: accept the values as sent
+    console.error('Could not read the activity list from ' + SPEC_URL + ', using the built-in list: ' + err);
+    return BUILT_IN_OPTIONS;
   }
 }
 

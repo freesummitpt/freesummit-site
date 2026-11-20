@@ -301,6 +301,21 @@ def build_api(shared, pages):
                            transfers=opts(transfers), curl=e(curl.replace("\\\n", "\\\n")))
     write(os.path.join(ROOT, "api", "index.html"), page)
 
+    # Built-in copy of the allowed values inside the Apps Script, used when it can't read api/booking.json
+    gs = os.path.join(ROOT, "tools", "booking-form-apps-script.gs")
+    with open(gs, encoding="utf-8") as f:
+        script = f.read()
+    opts = {"activity": act_values, "type": [t["value"] for t in types], "transfer": [t["value"] for t in transfers]}
+    block = ("// BEGIN BUILT-IN OPTIONS (written by tools/build_pages.py, do not edit by hand)\n"
+             "const BUILT_IN_OPTIONS = " + json.dumps(opts, ensure_ascii=False, indent=2) + ";\n"
+             "// END BUILT-IN OPTIONS")
+    new_script, n = re.subn(r"// BEGIN BUILT-IN OPTIONS.*?// END BUILT-IN OPTIONS", lambda m: block, script, flags=re.S)
+    if n != 1:
+        sys.exit("tools/booking-form-apps-script.gs: BUILT-IN OPTIONS markers not found")
+    if new_script != script:
+        write(gs, new_script)
+        print("  -> the Apps Script changed: paste it into Google and deploy a new version")
+
 
 def write(path, content):
     with open(path, "w", encoding="utf-8", newline="\n") as f:
