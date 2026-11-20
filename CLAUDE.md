@@ -39,7 +39,7 @@ The homepage `index.html` is hand-written.
 ## Booking form → Google Sheet
 - Form posts (no-cors) to the Apps Script web app URL in `assets/config.js` (`window.FS_CONFIG.formEndpoint`).
   If empty, the form falls back to opening an email draft.
-- The script appends a row to the "Pedidos" table in the Google Sheet **Booking Requests** (owner admin@freesummitpt.com)
+- The script appends a row to the "Requests" tab/table in the Google Sheet **Booking Requests** (owner admin@freesummitpt.com)
   and emails admin@freesummitpt.com. Columns: Received, Name, Email, Phone, Activity, Date, People, Type, Transfer,
   Message, Language, Page, Status (dropdown: New/Replied/Booked/Done/Cancelled).
 - `Page` = `<body data-page="...">` of the page that sent it (home, or the activity page's folder name). Keep this for ad tracking.

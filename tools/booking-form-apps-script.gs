@@ -22,7 +22,7 @@
  */
 
 const NOTIFY_EMAIL = 'admin@freesummitpt.com';
-const SHEET_NAME = 'Pedidos';
+const SHEET_NAME = 'Requests';   // the tab in the Booking Requests sheet where rows are added
 const SITE = 'https://freesummitpt.com';
 const SPEC_URL = SITE + '/api/booking.json';
 const FIELDS = ['name', 'email', 'phone', 'activity', 'date', 'people', 'type', 'transfer', 'message', 'lang', 'source'];
@@ -146,6 +146,7 @@ function options_() {
     cache.put('options', JSON.stringify(opts), 3600);
     return opts;
   } catch (err) {
+    console.error('Could not read the activity list from ' + SPEC_URL + ': ' + err); // see Apps Script → Executions
     return {}; // site unreachable: accept the values as sent
   }
 }
